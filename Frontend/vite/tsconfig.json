@@ -5,23 +5,24 @@
     },
     "baseUrl": "./",
     "target": "ES2020",
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": true, // classの 次世代構文をチェックする
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
+    "skipLibCheck": true, // *.d.ts のskip
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
+    "allowImportingTsExtensions": true, // TypeScript ファイルが .ts 、 .mts 、または .tsx などの TypeScript 固有の拡張子を使用して相互にインポートできるようになる
+    "resolveJsonModule": true, // import JSONの型解決
+    "isolatedModules": true, // 既存Global NameSpaceの変数と同名指定を排除する
+    "noEmit": true, // JavaScript ソース コード、ソース マップ、宣言などのコンパイラ出力ファイルを出力しない
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    /* Some Rules */
+    "noImplicitReturns": true, // 関数の戻り値がvoid以外のときにreturnを必須に
+    "noFallthroughCasesInSwitch": true, // switch文で、caseをbreakやreturnで終えていることを必須に
+    "noUncheckedIndexedAccess": true // オブジェクトが持つプロパティへのアクセスを厳密に評価
   },
   "include": ["src"]
 }
