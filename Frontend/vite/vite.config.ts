@@ -34,11 +34,11 @@ function readDirectory(dirPath: string) {
 
       // nameを決定する
       let targetName = "";
-      if (dirPath === path.resolve(__dirname, "src")) {
+      if (dirPath === path.resolve(__dirname, root)) {
         targetName = path.parse(itemPath).name;
       } else {
         const relativePath = path.relative(
-          path.resolve(__dirname, "src"),
+          path.resolve(__dirname, root),
           dirPath
         );
         const dirName = relativePath.replace(/\//g, "_");
@@ -47,25 +47,26 @@ function readDirectory(dirPath: string) {
 
       // pathを決定する
       const relativePath = path.relative(
-        path.resolve(__dirname, "src"),
+        path.resolve(__dirname, root),
         itemPath
       );
       const filePath = `/${relativePath}`;
-      console.log("filePath", path.parse(relativePath).name, filePath);
+      // console.log("filePath", path.parse(relativePath).name, filePath);
       files.push({ name: targetName.replace("pages_", ""), path: filePath });
     }
   }
 }
-readDirectory(path.resolve(__dirname, "src"));
+readDirectory(path.resolve(__dirname, root));
 const inputFiles = {};
 for (let i = 0; i < files.length; i++) {
   const file = files[i];
-  inputFiles[file.name] = path.resolve(__dirname, "./src" + file.path);
+  inputFiles[file.name] = path.resolve(__dirname, "./" + root + file.path);
 }
-console.log("inputFiles", inputFiles);
+// console.log("inputFiles", inputFiles);
 
 //https://ja.vitejs.dev/config/shared-options.html
 export default defineConfig({
+  appType: "mpa",
   root: "src/pages",
   publicDir: path.resolve(__dirname, "public"), // 静的アセット格納フォルダ
 
@@ -75,12 +76,14 @@ export default defineConfig({
     host: true, // IPアドレスを有効
     open: true,
   },
+
   build: {
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true, // dist内 clean
     cssCodeSplit: false, // cssファイルをチャンクごとに出力する
     minify: true, // default js の minify 設定
     cssMinify: false, // css minifyせずに出力する
+
     rollupOptions: {
       // pages html をinputする
       input: inputFiles,
@@ -108,11 +111,12 @@ export default defineConfig({
     },
   },
   resolve: {
+    // path alias setting
     alias: [{ find: "@", replacement: "../src" }],
   },
   json: {
+    // json静的タイプ追加
     stringify: true,
   },
   assetsInclude: ["*.woff"], // 静的アセットとして扱う追加パターンを指定
-  appType: "mpa",
 });
