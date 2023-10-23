@@ -1,73 +1,15 @@
 import { defineConfig } from "vite";
 import path from "path";
-import fs from "fs";
-const root = "src";
-
-/*
-  この形を自動的に作る
-  input:{
-    index: resolve(__dirname, './src/index.html'),
-    list: resolve(__dirname, './src/list.html')
-  }
-*/
-type fileConfigType = {
-  name: string;
-  path: string;
-};
-const files: fileConfigType[] = [];
-function readDirectory(dirPath: string) {
-  const items = fs.readdirSync(dirPath);
-
-  for (const item of items) {
-    const itemPath = path.join(dirPath, item);
-    if (fs.statSync(itemPath).isDirectory()) {
-      // componentsディレクトリを除外する
-      if (item === "components") {
-        continue;
-      }
-      readDirectory(itemPath);
-    } else {
-      // htmlファイル以外を除外する
-      if (path.extname(itemPath) !== ".html") {
-        continue;
-      }
-
-      // nameを決定する
-      let targetName = "";
-      if (dirPath === path.resolve(__dirname, root)) {
-        targetName = path.parse(itemPath).name;
-      } else {
-        const relativePath = path.relative(
-          path.resolve(__dirname, root),
-          dirPath
-        );
-        const dirName = relativePath.replace(/\//g, "_");
-        targetName = `${dirName}_${path.parse(itemPath).name}`;
-      }
-
-      // pathを決定する
-      const relativePath = path.relative(
-        path.resolve(__dirname, root),
-        itemPath
-      );
-      const filePath = `/${relativePath}`;
-      // console.log("filePath", path.parse(relativePath).name, filePath);
-      files.push({ name: targetName.replace("pages_", ""), path: filePath });
-    }
-  }
-}
-readDirectory(path.resolve(__dirname, root));
-const inputFiles = {};
-for (let i = 0; i < files.length; i++) {
-  const file = files[i];
-  inputFiles[file.name] = path.resolve(__dirname, "./" + root + file.path);
-}
-// console.log("inputFiles", inputFiles);
+import { exportedInputFiles } from "./vite.config.modules"; // 生成したHTML page list
 
 //https://ja.vitejs.dev/config/shared-options.html
 export default defineConfig({
-  appType: "mpa",
-  root: "src/pages",
+  appType: "mpa", // multi page app
+  root: "src/pages", // document root HTMLを配置するフォルダをrootに設定する。
+  resolve: {
+    // path alias setting
+    alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
+  },
   publicDir: path.resolve(__dirname, "public"), // 静的アセット格納フォルダ
 
   // https://ja.vitejs.dev/config/server-options.html
@@ -77,6 +19,7 @@ export default defineConfig({
     open: true,
   },
 
+  assetsInclude: ["*.woff"], // 静的アセットとして扱う追加パターンを指定
   build: {
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true, // dist内 clean
@@ -86,7 +29,7 @@ export default defineConfig({
 
     rollupOptions: {
       // pages html をinputする
-      input: inputFiles,
+      input: exportedInputFiles(),
       //ファイル出力設定
       output: {
         assetFileNames: (assetInfo: any) => {
@@ -110,13 +53,8 @@ export default defineConfig({
       },
     },
   },
-  resolve: {
-    // path alias setting
-    alias: [{ find: "@", replacement: "../src" }],
-  },
   json: {
     // json静的タイプ追加
     stringify: true,
   },
-  assetsInclude: ["*.woff"], // 静的アセットとして扱う追加パターンを指定
 });
