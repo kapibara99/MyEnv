@@ -9,10 +9,24 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@macropygia/vite-plugin-glob-input": "^0.0.16",
+    "@types/node": "^20.8.7",
+    "autoprefixer": "^10.4.16",
+    "css-declaration-sorter": "^7.1.1",
+    "postcss": "^8.4.31",
+    "postcss-normalize-charset": "^6.0.0",
+    "postcss-sort-media-queries": "^5.2.0",
     "sass": "^1.69.4",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
+  "browserslist": [
+    "last 3 versions",
+    "> 5%",
+    "Firefox ESR",
+    "not dead"
+  ],
   "volta": {
     "node": "18.18.2"
   }
