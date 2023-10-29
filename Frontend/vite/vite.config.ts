@@ -1,10 +1,12 @@
 import { defineConfig } from "vite";
 import path from "path";
 import { exportedInputFiles } from "./vite.config.modules"; // 生成したHTML page list
+import vitePluginSsinc from "vite-plugin-ssinc";
 
 //https://ja.vitejs.dev/config/shared-options.html
 export default defineConfig({
   appType: "mpa", // multi page app
+  base: "/", // assetリソースのパス設定（HTML hrefは素で設定） 相対パスの場合は ./
   root: "src/pages", // document root HTMLを配置するフォルダをrootに設定する。
   resolve: {
     // path alias setting
@@ -57,4 +59,13 @@ export default defineConfig({
     // json静的タイプ追加
     stringify: true,
   },
+  plugins: [
+    (() => {
+      if (process.env.NODE_ENV !== "production") {
+        return vitePluginSsinc({
+          includeExtensions: ["shtml", "html"],
+        });
+      }
+    })(),
+  ],
 });
