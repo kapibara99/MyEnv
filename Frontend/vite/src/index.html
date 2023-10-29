@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./_entries/style.scss" />
+    <title>{{ title }} | {{ domain }}</title>
+    <!--# include virtual="/include/head.html" -->
+  </head>
+  <body>
+    <div id="app"></div>
+    <div style="width: 100%; display: block">
+      <img src="./_modules/resources/img/Example_image.jpeg" alt="test image" />
+      <video src="_modules/resources/video/sample.mp4" controls></video>
+      <a href="/test.html">test go</a>
+    </div>
+    <script type="module" src="./_entries/main.ts"></script>
+  </body>
+</html>
