@@ -8,10 +8,10 @@ import { ejsHandler } from "./vite.config.ejsHandle";
 export default defineConfig({
   appType: "mpa", // multi page app
   base: "/", // assetリソースのパス設定（HTML hrefは素で設定） 相対パスの場合は ./
-  root: "src/pages", // document root HTMLを配置するフォルダをrootに設定する。
+  root: "src", // document root HTMLを配置するフォルダをrootに設定する。
   resolve: {
     // path alias setting
-    alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
+    alias: [{ find: "@", replacement: path.resolve(__dirname, "./src/_modules/") }],
   },
   publicDir: path.resolve(__dirname, "public"), // 静的アセット格納フォルダ
 
@@ -43,6 +43,9 @@ export default defineConfig({
           } else if (/png|jpe?g|svg|webp|gif|tiff|bmp|ico/i.test(extType)) {
             // images
             extType = "images";
+          } else if (/mp4|flv|mov|wmv|webm|avi/i.test(extType)) {
+            // video / movie file
+            extType = "movies";
           }
           //ビルド時のCSS名を明記してコントロールする
           if (extType === "css") {
