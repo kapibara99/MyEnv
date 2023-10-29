@@ -1,3 +1,5 @@
+import { hoge } from './test.js';
+
 export function setupCounter(element: HTMLButtonElement) {
 	let counter = 0;
 	const setCounter = (count: number) => {
@@ -6,6 +8,7 @@ export function setupCounter(element: HTMLButtonElement) {
 	};
 	element.addEventListener('click', () => {
 		setCounter(counter + 1);
+		hoge();
 	});
 	setCounter(0);
 }
