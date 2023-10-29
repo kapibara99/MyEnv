@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import path from "path";
 import { exportedInputFiles } from "./vite.config.modules"; // 生成したHTML page list
 import vitePluginSsinc from "vite-plugin-ssinc";
+import { ejsHandler } from "./vite.config.ejsHandle";
 
 //https://ja.vitejs.dev/config/shared-options.html
 export default defineConfig({
@@ -60,6 +61,8 @@ export default defineConfig({
     stringify: true,
   },
   plugins: [
+    // if development build , convert ssi
+    // https://www.npmjs.com/package/vite-plugin-ssinc
     (() => {
       if (process.env.NODE_ENV !== "production") {
         return vitePluginSsinc({
@@ -67,5 +70,8 @@ export default defineConfig({
         });
       }
     })(),
+
+    // like EJS template HTML value
+    ejsHandler(),
   ],
 });
