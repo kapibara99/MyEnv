@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
+		"build:removeTestingResources": "node ./config/remove_testing.js",
 		"lint": "eslint --ext .ts src --fix",
 		"lint:print": "eslint --print-config ./vite.config.ts > ./eslint-setting.json",
 		"prettier": "prettier --write 'src/**/*.{html,css,js,ts,md,json}' --config ./.prettierrc.cjs",
