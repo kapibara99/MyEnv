@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
+		"build": "tsc && npm run format && vite build && npm run build:removeTestingResources",
 		"build:removeTestingResources": "node ./config/remove_testing.js",
 		"lint": "eslint --ext .ts src --fix",
 		"lint:print": "eslint --print-config ./vite.config.ts > ./eslint-setting.json",

@@ -4,7 +4,7 @@
 		"browser": true,
 		"es2021": true
 	},
-	"ignorePatterns": ["*.js.ts", "node_modules/*"], // js like なファイルとする
+	"ignorePatterns": ["*.js.ts", "node_modules/*"], // js like なファイルをlint対象外にする
 	"extends": [
 		"standard-with-typescript", // basic rules . no option https://github.com/standard/eslint-config-standard-with-typescript
 		// standard-with-typescriptに含まれる "eslint:recommended", "plugin:@typescript-eslint/recommended",
