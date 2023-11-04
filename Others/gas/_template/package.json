@@ -1,0 +1,25 @@
+{
+  "name": "gas-clasp-template",
+  "version": "1.0.0",
+  "description": " GASのlocal開発テンプレート",
+  "main": "index.ts",
+  "scripts": {
+    "lint": "eslint --ext .ts --fix",
+    "lint:print": "eslint --print-config ./vite.config.ts > ./eslint-setting.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "volta": {
+    "node": "18.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "@types/google-apps-script": "^1.0.76"
+  }
+}
