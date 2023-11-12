@@ -18,10 +18,10 @@
 		"build:vite": "vite build",
 		"build:removeTestingResources": "node ./config/remove_testing.js",
 		"watch:html": "onchange --initial -d 500 \"src/**/*.html\" -- npm run lint:html",
-		"watch:style": "",
+		"watch:style": "onchange --initial -d 500 \"src/**/*.{css,scss}\" -- npm run lint:style",
 		"watch:eslint": "onchange --initial -d 500 \"src/**/*.ts\" -- eslint \"src/**/*.ts\" && echo Success!",
 		"lint:es": "eslint --ext .ts src --fix",
-		"lint:style": "",
+		"lint:style": "stylelint \"src/**/*.{css,scss}\"",
 		"lint:html": "markuplint \"src/**/*.html\""
 	},
 	"devDependencies": {
@@ -44,6 +44,10 @@
 		"postcss-sort-media-queries": "^5.2.0",
 		"prettier": "^3.0.3",
 		"sass": "^1.69.4",
+		"stylelint": "^15.11.0",
+		"stylelint-config-recess-order": "^4.3.0",
+		"stylelint-config-standard-scss": "^11.1.0",
+		"stylelint-declaration-block-no-ignored-properties": "^2.7.0",
 		"typescript": "^5.2.2",
 		"vite": "^4.4.5",
 		"vite-plugin-handlebars": "^1.6.0",
