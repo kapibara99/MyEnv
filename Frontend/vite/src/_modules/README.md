@@ -94,7 +94,7 @@ style記述は持たず、あくまでUI仕様的な責任範囲です。
 ↓
 Service(useCase/Application)
 
-Container ComponentとInfrastructureの橋渡しと、各データ編集など機能面で必要な処理を行い、返却するのみで、ここで状態は持ちません。
+Container ComponentとInfrastructureの橋渡しと、各データ編集など機能面で必要な処理責任を持ちます。主に関数で受け取り、値を返却するのみで、ここで状態は持ちません。
 もし記述量が少ないなどあれば、ContainerComponentにマージされるかもしれません。
 対応するテストは単体テストです。
 
