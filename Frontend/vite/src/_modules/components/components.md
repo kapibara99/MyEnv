@@ -1,2 +1,1 @@
 # components
-styleのみを責任とする presentationalと、style記述は持たず、UI仕様的な責任範囲のContainerに分かれます。
