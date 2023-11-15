@@ -68,31 +68,62 @@ HTMLが最上位のエントリー兼状態管理の箱となるため、そこ�
 そのため、テストやドメイン的な整理も、フロントエンド開発では必要不可欠です。
 ガッチガチに決めるというよりは、ゆるく思想の影響を受けて、実装に使用するという程度で、ゆるくやっていきたいと思います。
 
-## 階層区分
+## 階層設計区分
 
-HTML
+### 各HTML
+
+最上位のレイヤー、AtomicDesignのpages、などに該当します。
+初期状態を持ち、宣言的にコンポーネントを記述し、呼び出します。
 ↓
-Presentational Component(UI)
 
-styleのみを責任とする。
-対応するテストは、ビジュアルリグレッション、 Storybookなど。
+### Components
 
-- atoms
-- molecules
-- organism
+#### atoms
 
-↓
-Container Component(Feature/State update/Interaction event)
+最小単位のUIパーツです。単体でインタラクションイベントは持たず、Viewのみに関心を持ちます。
+静的なHTML ,CSSでの、Storybookに使用されます。
 
-各イベントや機能的なものをUIと切り離して管理することで、それぞれのソースの透明性を高めます。
-style記述は持たず、あくまでUI仕様的な責任範囲です。
+##### 責任
 
-- JSONtoHTML
-- Form handler / Validation updater
-- Event handler
+##### 対象テスト
 
-↓
-Service(useCase/Application)
+##### Note
+
+#### molecules
+
+atoms , もしくはmoleculesの集合体です。
+atoms同様、Viewのみに関心を持ちます。
+
+##### 責任
+
+##### 対象テスト
+
+##### Note
+
+#### organism
+
+状態やインタラクティブイベントを持ち、単体でデータの取得・描画など持つべき機能を満たせる構成となったパーツを指します。
+Container的な役割を持ちうり、機能面を満たすレイヤーであることが多いです。
+もっとも責任が複合的になるため、.containerや.presenterなど、接頭辞を適宜つけるなど、判別できる命名をすることが求められます。
+
+##### 責任
+
+##### 対象テスト
+
+##### Note
+
+#### templates
+
+organismを複数取りまとめた、複雑な要素を固めて定義する必要がある定義する必要がある場合は、ここで定義します。
+しかし、あまりテンプレートが、派生として乱立することは、責任が分解されすぎている可能性があるため、organismの設計を見直すことをお勧めします。
+
+##### 責任
+
+##### 対象テスト
+
+##### Note
+
+### Service(useCase/Application)
 
 Container ComponentとInfrastructureの橋渡しと、各データ編集など機能面で必要な処理責任を持ちます。主に関数で受け取り、値を返却するのみで、ここで状態は持ちません。
 もし記述量が少ないなどあれば、ContainerComponentにマージされるかもしれません。
@@ -103,7 +134,8 @@ Container ComponentとInfrastructureの橋渡しと、各データ編集など�
 - data edit
 
 ↓
-Infrastructure(To Backend or others env)
+
+### Infrastructure(To Backend or others env)
 
 API通信や外部との連携に必要なソースがここに該当します。
 localhostなどの時のモックアップは主にこの層を確認しながら、行います。
@@ -111,8 +143,7 @@ localhostなどの時のモックアップは主にこの層を確認しなが�
 - fetch / XMRHttpRequest
 - Promise / async , await
 
-And...
-Utility
+### Utility
 
 Serviceに属さないけど、汎用的な関数や汎用styleがここに配置されます。
 date pluginなどラッピングしてプロダクト各所で利用が想定される関数もここに置かれるのがいいと思います。
@@ -121,13 +152,14 @@ date pluginなどラッピングしてプロダクト各所で利用が想定さ
 - function
 - styles
 
-Model
+### Model
+
 プロジェクト全体に関わる変数・関数・型の定義を行います。
 
 - core domain types
 - core variables
 
-assets
+### assets
 
 css,jsなどの記述ファイル以外のリソースが該当します。
 
