@@ -7,6 +7,7 @@
 		},
 		"baseUrl": "./",
 		"target": "ES2020",
+		"types": ["vite/client"],
 		"useDefineForClassFields": true, // classの 次世代構文をチェックする
 		"module": "ESNext",
 		"lib": ["ES2020", "DOM", "DOM.Iterable"],
