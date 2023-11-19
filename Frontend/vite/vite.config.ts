@@ -30,7 +30,7 @@ export default defineConfig({
 		open: true,
 	},
 
-	assetsInclude: ['*.woff'], // 静的アセットとして扱う追加パターンを指定
+	assetsInclude: ['**/*.woff', '**/*.html'], // 静的アセットとして扱う追加パターンを指定
 	build: {
 		outDir: path.resolve(__dirname, 'dist'),
 		emptyOutDir: true, // dist内 clean
