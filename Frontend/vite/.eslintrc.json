@@ -32,7 +32,50 @@
 		// 0 = off, 1 = warn, 2 = error
 		"@typescript-eslint/no-non-null-assertion": 0, // !演算子による null 式を許容する
 		"@typescript-eslint/no-explicit-any": 1, // anyをwarningで許容する
-		"@typescript-eslint/explicit-function-return-type": 0 // return のない関数を許容する（計算、加工などのみの用途があリウる）
+		"@typescript-eslint/explicit-function-return-type": 0, // return のない関数を許容する（計算、加工などのみの用途があリウる）
+
+		// ディレクトリ間の依存関係
+		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules
+		"import/no-restricted-paths": [
+			"warn", // "error"
+			{
+				"zones": [
+					// Layered Architecture
+					{
+						"from": "./src/_modules/model", // 対象の依存パス
+						"target": "./src/_modules/(components|infrastructure|service)", // 禁止するパス（正規表現可）
+						// エラーメッセージ
+						"message": "ドメイン層にはあらゆるユーティリティを除いたすべてに対し非依存な層です。"
+					},
+					{
+						"from": "./src/_modules/components/(atoms|molecules)", // 対象の依存パス
+						"target": "./src/_modules/(infrastructure|service)", // 禁止するパス（正規表現可）
+						// エラーメッセージ
+						"message": "infrastructureとserviceは,organisms以降で依存させることができます。moleculesまでは純粋なUIのみの責任です。atomsとmoleculesのみに依存します。"
+					},
+
+					// atomic design
+					{
+						"from": "./src/_modules/components/atoms", // 対象の依存パス
+						"target": "./src/_modules/components/(molecules|organisms|templates)", // 禁止するパス（正規表現可）
+						// エラーメッセージ
+						"message": "atomsは最小単位のUIパーツです。"
+					},
+					{
+						"from": "./src/_modules/components/molecules", // 対象の依存パス
+						"target": "./src/_modules/components/(organisms|templates)", // 禁止するパス（正規表現可）
+						// エラーメッセージ
+						"message": "moleculesはatomsとmoleculesのみに依存します。"
+					},
+					{
+						"from": "./src/_modules/components/organisms", // 対象の依存パス
+						"target": "./src/_modules/components/(templates)", // 禁止するパス（正規表現可）
+						// エラーメッセージ
+						"message": "organismsはatomsとmolecules、organismsに依存します。"
+					}
+				]
+			}
+		]
 	},
 	"overrides": [
 		// 特定ファイルのみ設定を変更する
@@ -43,5 +86,10 @@
 				"@typescript-eslint/triple-slash-reference": 0
 			}
 		}
-	]
+	],
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
+	}
 }
