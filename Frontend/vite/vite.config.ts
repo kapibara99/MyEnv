@@ -16,9 +16,9 @@ export default defineConfig({
 	resolve: {
 		// path alias setting
 		alias: [
-			{ find: '@', replacement: path.resolve(__dirname, './src/_modules/') },
-			{ find: '~', replacement: path.resolve(__dirname, './public/') },
-			{ find: '#', replacement: path.resolve(__dirname, './src/') },
+			{ find: '@', replacement: path.resolve(__dirname, 'src/_modules/') },
+			{ find: '~', replacement: path.resolve(__dirname, 'public/') },
+			{ find: '#', replacement: path.resolve(__dirname, 'src/') },
 		],
 	},
 	publicDir: path.resolve(__dirname, 'public'), // 静的アセット格納フォルダ
@@ -85,4 +85,14 @@ export default defineConfig({
 		// like EJS template HTML value
 		ejsHandler(),
 	],
+	css: {
+		modules: {
+			scopeBehaviour: 'local',
+		},
+		preprocessorOptions: {
+			scss: {
+				additionalData: ['@charset "UTF-8";'].join('\n'),
+			},
+		},
+	},
 });

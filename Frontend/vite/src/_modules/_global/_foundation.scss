@@ -1,0 +1,8 @@
+@use '@/_global/variables/variables';
+@use '@/_global/functions/mixins';
+
+body {
+	background-color: #333;
+	color: variables.$mainTextColor;
+	font-family: variables.$font-family-gothic;
+}
