@@ -38,7 +38,6 @@
 		"@types/node": "^20.8.7",
 		"@typescript-eslint/eslint-plugin": "^6.9.0",
 		"autoprefixer": "^10.4.16",
-		"css-declaration-sorter": "^7.1.1",
 		"eslint": "^8.52.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-config-standard-with-typescript": "^39.1.1",

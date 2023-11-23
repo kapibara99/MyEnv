@@ -1,6 +1,6 @@
 module.exports = {
 	extends: ['stylelint-config-standard-scss', 'stylelint-config-recess-order'],
-	plugin: 'stylelint-declaration-block-no-ignored-properties',
+	plugin: ['stylelint-declaration-block-no-ignored-properties'],
 	rules: {
 		'block-no-empty': true, // 空の宣言ブロックをチェック
 		'color-no-invalid-hex': true, // 16進数表記が正しいか

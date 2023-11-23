@@ -2,12 +2,13 @@
 @use '@/_global/functions/mixins';
 
 // 接頭辞 共通
-.a- {
+.a {
 	// 接頭辞 親ディレクトリ - 子ディレクトリ
 	// 例：components/atoms → -c-a-
 	&-c-a {
 		// ブロック名
 		&-name {
+			color: red;
 		}
 	}
 }
