@@ -1,6 +1,6 @@
 import * as fs from 'node:fs';
 
-const paths = ['dist/testing-page', 'dist/testing-assets'];
+const paths = ['dist/_modules', 'dist/testing-page', 'dist/testing-assets'];
 try {
 	for (const path of paths) {
 		fs.rmSync(path, { recursive: true, force: true });

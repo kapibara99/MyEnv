@@ -2,7 +2,7 @@
 @use '@/_global/functions/mixins';
 
 body {
-	font-family: variables.$fontFamilyGothic;
-	color: variables.$mainTextColor;
+	font-family: variables.$font-family-gothic;
+	color: variables.$main-text-color;
 	background-color: #333;
 }
