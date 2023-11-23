@@ -16,7 +16,7 @@
 		"build:typeScrypt": "tsc",
 		"build:formatter": "npm run format",
 		"build:vite": "vite build",
-		"build:removeTestingResources": "node ./config/remove_testing.js",
+		"build:removeTestingResources": "node ./nodeJS/remove_testing.js",
 		"watch:html": "onchange --initial -d 500 \"src/**/*.html\" -- npm run lint:html",
 		"watch:style": "onchange --initial -d 500 \"src/**/*.{css,scss}\" -- npm run lint:style",
 		"watch:eslint": "onchange --initial -d 500 \"src/**/*.ts\" -- eslint \"src/**/*.ts\" && echo Success!",
