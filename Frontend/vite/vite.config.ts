@@ -30,11 +30,11 @@ export default defineConfig({
 		open: true,
 	},
 
-	assetsInclude: ['**/*.woff', '**/*.html'], // 静的アセットとして扱う追加パターンを指定
+	assetsInclude: ['**/*.woff', 'src/_modules/**/*.html'], // 静的アセットとして扱う追加パターンを指定
 	build: {
 		outDir: path.resolve(__dirname, 'dist'),
 		emptyOutDir: true, // dist内 clean
-		cssCodeSplit: false, // cssファイルをチャンクごとに出力する
+		// cssCodeSplit: false, // cssファイルをチャンクごとに出力する
 		minify: true, // default js の minify 設定
 		cssMinify: false, // css minifyせずに出力する
 
@@ -57,7 +57,7 @@ export default defineConfig({
 					}
 					// ビルド時のCSS名を明記してコントロールする
 					if (extType === 'css') {
-						return '_shared/css/style.css';
+						return '_shared/css/[name].css';
 					}
 					// その他ファイル
 					return `_shared/${extType}/[name][extname]`;
@@ -86,6 +86,7 @@ export default defineConfig({
 		ejsHandler(),
 	],
 	css: {
+		transformer: 'postcss',
 		modules: {
 			scopeBehaviour: 'local',
 		},
