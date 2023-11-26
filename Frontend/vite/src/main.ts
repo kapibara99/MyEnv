@@ -1,5 +1,4 @@
-import './style.scss';
-import './foundation.scss';
+import './_style.scss';
 
 import typescriptLogo from '#/typescript.svg';
 import viteLogo from '~/vite.svg';

@@ -15,20 +15,20 @@ interface fileConfigType {
 	path: string;
 }
 const files: fileConfigType[] = [];
-function readDirectory(dirPath: string) {
+function readDirectory(dirPath: string, targetExt: string = '.html') {
 	const items = fs.readdirSync(dirPath);
 
 	for (const item of items) {
 		const itemPath = path.join(dirPath, item);
 		if (fs.statSync(itemPath).isDirectory()) {
-			// componentsディレクトリを除外する
-			if (item === 'components') {
+			// _modulesディレクトリを除外する (stories fileなど)
+			if (item === '_modules') {
 				continue;
 			}
 			readDirectory(itemPath);
 		} else {
 			// htmlファイル以外を除外する
-			if (path.extname(itemPath) !== '.html') {
+			if (path.extname(itemPath) !== targetExt) {
 				continue;
 			}
 
@@ -52,8 +52,11 @@ function readDirectory(dirPath: string) {
 }
 
 export const exportedInputFiles = () => {
-	readDirectory(path.resolve(__dirname, root));
+	readDirectory(path.resolve(__dirname, root)); // add page html
+	readDirectory(path.resolve(__dirname, root), '.scss'); // add entry sass
 	const inputFiles: Record<string, string> = {};
+	// console.log('files', files);
+
 	for (let i = 0; i < files.length; i++) {
 		const file = files[i];
 		if (file === undefined) return;
