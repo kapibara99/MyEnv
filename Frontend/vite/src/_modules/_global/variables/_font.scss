@@ -1,3 +1,9 @@
+/*
+========================================
+font family
+========================================
+*/
+
 // ゴシック系日本語フォント
 $font-family-gothic: 'Helvetica Neue', helvetica, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', arial, 'Yu Gothic',
 	meiryo, sans-serif;
@@ -7,3 +13,11 @@ $font-family-mincho: 'Times New Roman', yumincho, 'Hiragino Mincho ProN', 'Yu Mi
 
 // 〇〇系××フォント
 $font-family-xxx: '';
+
+/*
+========================================
+basic font size
+========================================
+*/
+
+$basic-text-font-size: 16px;
