@@ -7,7 +7,7 @@
 		"dev": "vite",
 		"preview": "vite preview --port 8081",
 		"build": "run-s build:*",
-		"watch": "run-s watch:*",
+		"watch": "run-p watch:*",
 		"lint": "run-s lint:*",
 		"format": "npm run lint && npm run prettier",
 		"prettier": "prettier --write \"src/**/*.{html,css,js,ts,md,json}\" --config ./.prettierrc.cjs",

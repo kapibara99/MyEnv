@@ -1,3 +1,4 @@
+// font size setting
 @mixin font($size: null, $height: null, $spacing: null, $weight: null) {
 	@if $size {
 		// font-size: $size;
@@ -11,8 +12,16 @@
 	@if $spacing {
 		letter-spacing: calc($spacing / 1000 * 1em);
 	}
-	
+
 	@if $weight {
 		font-weight: $weight;
 	}
 }
+
+// responsive break point and media query
+
+// animation style media query
+// dark mode media query
+
+// print media query
+

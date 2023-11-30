@@ -1,8 +1,22 @@
 @use '@/_global/variables/variables';
 @use '@/_global/functions/mixins';
 
-body {
-	font-family: variables.$font-family-gothic;
-	color: variables.$main-text-color;
-	background-color: #333;
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
+
+a:link,
+a:active {
+	color: inherit;
+}
+
+button {
+	appearance: none;
+	background: none;
+	border: none;
+}
+
+// form reset style
+
