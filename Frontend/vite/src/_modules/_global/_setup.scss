@@ -1,14 +1,10 @@
 @use '@/_global/variables/variables';
 @use '@/_global/functions/mixins';
 
-:root {
-	overflow-wrap: break-word;
-	line-break: strict;
-}
+// :root {}
 
 body {
 	font-family: variables.$font-family-gothic;
 	color: variables.$main-text-color;
 	background-color: #333;
 }
-
