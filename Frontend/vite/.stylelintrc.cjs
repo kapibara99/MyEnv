@@ -21,6 +21,14 @@ module.exports = {
 		'string-no-newline': true, // content 内などで文字列に改行が入っていないか
 		'unit-no-unknown': true, // 単位の記述（px, em など）が正しいか
 		'at-rule-no-unknown': null, // SCSS @ の記述でエラーが出るため
+		'rule-empty-line-before': [
+			'always',
+			{
+				except: ['inside-block'],
+				ignore: ['after-comment'],
+			},
+		],
+		'color-function-notation': 'legacy',
 		'alpha-value-notation': 'number',
 		'font-family-no-missing-generic-family-keyword': true,
 		'declaration-block-no-shorthand-property-overrides': true,

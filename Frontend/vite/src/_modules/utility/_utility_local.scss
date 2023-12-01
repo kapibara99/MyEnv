@@ -1,14 +1,31 @@
 @use '@/_global/variables/variables';
 @use '@/_global/functions/mixins';
 
-// 接頭辞 共通
-.a {
-	// 接頭辞 親ディレクトリ - 子ディレクトリ
-	// 例：components/atoms → -c-a-
-	&-c-a {
-		// ブロック名
-		&-name {
-			color: red;
+@mixin local-utility {
+	// CSSショートハンド ローカル設定
+
+	// width
+	// &-w {
+	// }
+
+	// margin
+	// &-m {
+	// }
+
+	// font-size
+	// &-fz {
+	// }
+
+	// font-family
+	&-ff {
+		&-gothic {
+			font-family: variables.$font-family-gothic;
+		}
+		&-mincho {
+			font-family: variables.$font-family-mincho;
+		}
+		&-xxx {
+			font-family: variables.$font-family-xxx;
 		}
 	}
 }
