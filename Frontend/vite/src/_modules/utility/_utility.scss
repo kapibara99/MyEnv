@@ -1,14 +1,11 @@
-@use '@/_global/variables/variables';
-@use '@/_global/functions/mixins';
+@use './utility_origin' as origin;
+@use './utility_local' as local;
 
 // 接頭辞 共通
 .a {
-	// 接頭辞 親ディレクトリ - 子ディレクトリ
-	// 例：components/atoms → -c-a-
-	&-c-a {
-		// ブロック名
-		&-name {
-			color: red;
-		}
-	}
+	@include origin.utility;
+}
+
+.al {
+	@include local.local-utility;
 }

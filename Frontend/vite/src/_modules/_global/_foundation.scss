@@ -15,7 +15,6 @@
 
 html {
 	text-size-adjust: none;
-
 	&:focus-within {
 		scroll-behavior: smooth;
 	}
@@ -30,7 +29,6 @@ html {
 		animation-iteration-count: 1 !important;
 		scroll-behavior: auto !important;
 	}
-
 	html:focus-within {
 		scroll-behavior: auto;
 	}
