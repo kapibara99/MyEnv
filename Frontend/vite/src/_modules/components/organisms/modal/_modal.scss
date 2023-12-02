@@ -1,0 +1,97 @@
+@use '@/_global/variables/variables';
+@use '@/_global/functions/mixins';
+
+// 背景のスクロールを止める
+body.-modal--scrollPrevented {
+	position: fixed;
+	z-index: 1;
+	overflow: hidden;
+	width: 100%;
+}
+
+// 接頭辞 共通
+.a {
+	// 接頭辞 親ディレクトリ - 子ディレクトリ
+	// 例：components/atoms → -c-a-
+	&-c-o {
+		// ブロック名
+		&-modal {
+			$base-z-index: 100;
+			$self: &;
+			visibility: hidden;
+			position: fixed;
+			z-index: -1;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			align-items: stretch;
+			margin: 0 auto;
+			padding: 0 24px;
+			will-change: transform;
+			transform: translate3d(0, 100%, 0);
+			// easeOutQuart
+			transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+			#{$self}.-opening & {
+				visibility: visible;
+				z-index: ($base-z-index + 1);
+				transform: translate3d(0, 0, 0);
+			}
+			#{$self}.-opened & {
+				visibility: visible;
+				z-index: ($base-z-index + 1);
+				transform: translate3d(0, 0, 0);
+			}
+			#{$self}.-closing & {
+				visibility: visible;
+				z-index: ($base-z-index + 1);
+				transform: translate3d(0, 100%, 0);
+				transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+
+			// 背景
+			&__background {
+				// デフォルトではhiddenにしておく
+				visibility: hidden;
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				display: block;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.8);
+				opacity: 0;
+				will-change: opacity;
+				transition: opacity 0.2s linear;
+				// opening == 開くTransition, opened == 開いている状態
+				#{$self}.-opening &,
+				#{$self}.-opened & {
+					visibility: visible;
+					z-index: $base-z-index;
+					opacity: 1;
+				}
+				// closing == 閉じるTransition
+				#{$self}.-closing & {
+					visibility: visible;
+					z-index: $base-z-index;
+					opacity: 0;
+				}
+			}
+			// スクロールコンテナー
+			&__scroller {
+				position: relative;
+				overflow-x: hidden;
+				overflow-y: scroll;
+				flex: 1 1 auto;
+			}
+			// コンテンツ
+			&__contents {
+				width: 100%;
+				background: #ffffff;
+			}
+		}
+	}
+}
