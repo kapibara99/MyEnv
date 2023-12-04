@@ -5,10 +5,14 @@
 .a {
 	// 接頭辞 親ディレクトリ - 子ディレクトリ
 	// 例：components/atoms → -c-a-
-	&-c-a {
+	&-c-o {
 		// ブロック名
-		&-name {
-			color: red;
+		&-chart {
+			display: block;
+			width: 100%;
+			max-width: 700px;
+			height: auto;
+			margin: auto;
 		}
 	}
 }
