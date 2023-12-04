@@ -3,9 +3,13 @@
 
 // 接頭辞 共通
 .a {
-	@include origin.utility;
+	&-u {
+		@include origin.utility;
+	}
 }
 
 .al {
-	@include local.local-utility;
+	&-u {
+		@include local.local-utility;
+	}
 }
