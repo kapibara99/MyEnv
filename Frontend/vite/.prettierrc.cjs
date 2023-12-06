@@ -1,7 +1,7 @@
 module.exports = {
 	// https://prettier.io/docs/en/options
 	// https://prettier.io/docs/en/ignore
-	printWidth: 120,
+	printWidth: 200,
 	tabWidth: 2,
 	useTabs: true,
 	singleQuote: true,
@@ -13,5 +13,5 @@ module.exports = {
 	endOfLine: 'auto', // lf|crlf|cr|auto
 	embeddedLanguageFormatting: 'off', // 埋め込みコードの書式変更を行うかどうか
 
-	// parser: "typescript",
+	parser: "typescript",
 };

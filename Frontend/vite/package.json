@@ -37,7 +37,7 @@
 		"@storybook/testing-library": "^0.2.2",
 		"@types/node": "^20.8.7",
 		"@typescript-eslint/eslint-plugin": "^6.9.0",
-		"autoprefixer": "^10.4.16",
+		"autoprefixer": "^10.4.5",
 		"eslint": "^8.52.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-config-standard-with-typescript": "^39.1.1",
@@ -75,6 +75,7 @@
 		"node": "18.18.2"
 	},
 	"dependencies": {
-		"chart.js": "^4.4.0"
+		"chart.js": "^4.4.0",
+		"chartjs-plugin-datalabels": "^2.2.0"
 	}
 }

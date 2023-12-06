@@ -8,11 +8,21 @@
 	&-c-o {
 		// ブロック名
 		&-chart {
-			display: block;
-			width: 100%;
-			max-width: 700px;
-			height: auto;
-			margin: auto;
+			position: absolute;
+			right: 50%;
+			bottom: 50%;
+			width: 100% !important;
+			height: 100% !important;
+			transform: translate(50%, 50%);
+			&-wrapper {
+				position: relative;
+				display: block;
+				width: 100%;
+				max-width: 700px;
+				height: 80px;
+				margin: auto;
+				overflow: hidden;
+			}
 		}
 	}
 }

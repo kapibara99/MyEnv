@@ -1,22 +1,27 @@
 [
 	{
 		"label": "January",
-		"value": [25],
+		"data": [25],
 		"backgroundColor": "red"
 	},
 	{
 		"label": "February",
-		"value": [30],
+		"data": [30],
 		"backgroundColor": "blue"
 	},
 	{
 		"label": "March",
-		"value": [15],
+		"data": [15],
 		"backgroundColor": "green"
 	},
 	{
 		"label": "April",
-		"value": [30],
+		"data": [20],
 		"backgroundColor": "yellow"
+	},
+	{
+		"label": "May",
+		"data": [10],
+		"backgroundColor": "purple"
 	}
 ]
