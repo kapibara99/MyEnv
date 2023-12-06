@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/html';
-
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 const preview: Preview = {
 	parameters: {
 		actions: { argTypesRegex: '^on[A-Z].*' },
@@ -8,6 +8,9 @@ const preview: Preview = {
 				color: /(background|color)$/i,
 				date: /Date$/i,
 			},
+		},
+		viewport: {
+			viewports: INITIAL_VIEWPORTS,
 		},
 	},
 };
