@@ -1,1 +1,12 @@
-[30, 70]
+[
+  {
+    "data": [25,75],
+    "backgroundColor": ["red","#444"],
+    "borderColor": ["red","#444"],
+    "hoverBackgroundColor": ["red","#444"],
+    "hoverBorderColor": ["red","#444"],
+    "borderWidth": 1,
+    "borderRadius": [50,0],
+    "cutout": "90%"
+  }
+]

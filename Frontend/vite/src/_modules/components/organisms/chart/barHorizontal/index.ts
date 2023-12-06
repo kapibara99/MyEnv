@@ -18,7 +18,6 @@ function initializeOptions(el: HTMLElement) {
 		// 最大三文字として、入らない場合はfalseを返す
 		return ((defaultFontSize * 2.5) / offsetWidth) * 100;
 	}
-	console.log(convertedLimitFontSize(offsetWidth), offsetWidth);
 
 	return {
 		type: 'bar',
