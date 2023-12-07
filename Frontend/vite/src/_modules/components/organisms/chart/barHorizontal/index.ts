@@ -100,8 +100,8 @@ export function initializeBarHorizontalChart(target: HTMLCanvasElement) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-	const barHorizontalCharts = [].slice.call(document.querySelectorAll('[data-chart-id="horizontalBar"]'));
-	barHorizontalCharts.forEach((chart: HTMLCanvasElement) => {
+	const charts = [].slice.call(document.querySelectorAll('[data-chart-id="horizontalBar"]'));
+	charts.forEach((chart: HTMLCanvasElement) => {
 		initializeBarHorizontalChart(chart);
 	});
 });
