@@ -1,5 +1,5 @@
 import lineData from './line.json';
-import { HTMLLegendClassNames, initializeChart, initializeHTMLLegend } from '../chart.shared';
+import { HTMLLegendClassNames, activatedTooltipOptions, initializeChart, initializeHTMLLegend } from '../chart.shared';
 
 function initializeOptions(el: HTMLElement) {
 	return {
@@ -23,9 +23,7 @@ function initializeOptions(el: HTMLElement) {
 				title: {
 					display: false,
 				},
-				tooltip: {
-					enabled: false,
-				},
+				tooltip: activatedTooltipOptions(),
 			},
 		},
 	};
@@ -35,7 +33,7 @@ export function initializeLineChart(target: HTMLCanvasElement) {
 	const chartEl = target.getContext('2d') as CanvasRenderingContext2D;
 	const baseOptions = initializeOptions(target);
 
-	// console.log('chart start', baseOptions);
+	console.log('chart start', target.getBoundingClientRect());
 	let chart = initializeChart(chartEl, baseOptions);
 
 	window.addEventListener('resize', () => {
@@ -47,10 +45,7 @@ export function initializeLineChart(target: HTMLCanvasElement) {
 
 		if (hiddenIndexAry.length) {
 			hiddenIndexAry.forEach(v => {
-				const el =
-					(target.parentElement?.querySelector(
-						`.${HTMLLegendClassNames.button}:nth-of-type(${v.datasetIndex ? v.datasetIndex + 1 : 1})`,
-					) as HTMLButtonElement) ?? null;
+				const el = (target.parentElement?.querySelector(`.${HTMLLegendClassNames.button}:nth-of-type(${v.datasetIndex ? v.datasetIndex + 1 : 1})`) as HTMLButtonElement) ?? null;
 				if (el) el.click();
 			});
 			hiddenIndexAry = [];
