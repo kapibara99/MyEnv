@@ -69,8 +69,8 @@ export function initializeCircleInValueChart(target: HTMLCanvasElement) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-	const barHorizontalCharts = [].slice.call(document.querySelectorAll('[data-chart-id="circleInValue"]'));
-	barHorizontalCharts.forEach((chart: HTMLCanvasElement) => {
+	const charts = [].slice.call(document.querySelectorAll('[data-chart-id="circleInValue"]'));
+	charts.forEach((chart: HTMLCanvasElement) => {
 		initializeCircleInValueChart(chart);
 	});
 });
