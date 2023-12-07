@@ -21,7 +21,6 @@
 				max-width: 700px;
 				height: 80px;
 				margin: auto;
-				overflow: hidden;
 				&.-circle-in-value,
 				&.-circle {
 					width: 300px;
@@ -55,6 +54,14 @@
 				height: 24px;
 				margin-right: 4px;
 			}
+			&__text {
+				font-size: 12px;
+			}
+		}
+		// Custom Tooltip
+		&-chart-tooltip{
+			position: absolute;
+			display: inline-block;
 			&__text {
 				font-size: 12px;
 			}
