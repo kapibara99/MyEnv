@@ -1,5 +1,7 @@
 import lineData from './line.json';
-import { HTMLLegendClassNames, activatedTooltipOptions, initializeChart, initializeHTMLLegend } from '../chart.shared';
+import { initializeChart } from '../chart.shared';
+import { HTMLLegendClassNames, initializeHTMLLegend } from '../chart.lib.legend';
+import { activatedTooltipOptions } from '../chart.lib.tooltip';
 
 function initializeOptions(el: HTMLElement) {
 	return {
