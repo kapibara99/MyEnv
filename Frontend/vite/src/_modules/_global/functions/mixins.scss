@@ -19,6 +19,11 @@
 }
 
 // responsive break point and media query
+@mixin mq($breakpoint: pc) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
 
 // animation style media query
 // dark mode media query
