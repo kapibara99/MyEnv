@@ -35,7 +35,7 @@ export function initializeLineChart(target: HTMLCanvasElement) {
 	const chartEl = target.getContext('2d') as CanvasRenderingContext2D;
 	const baseOptions = initializeOptions(target);
 
-	console.log('chart start', target.getBoundingClientRect());
+	// console.log('chart start', target.getBoundingClientRect());
 	let chart = initializeChart(chartEl, baseOptions);
 
 	window.addEventListener('resize', () => {
