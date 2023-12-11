@@ -2,11 +2,11 @@
 @use '@/_global/functions/mixins';
 
 // 背景のスクロールを止める
-body.-modal--scrollPrevented {
+body.-modal--scroll-prevented {
 	position: fixed;
 	z-index: 1;
-	overflow: hidden;
 	width: 100%;
+	overflow: hidden;
 }
 
 // 接頭辞 共通
@@ -18,79 +18,80 @@ body.-modal--scrollPrevented {
 		&-modal {
 			$base-z-index: 100;
 			$self: &;
-			visibility: hidden;
+
 			position: fixed;
+			inset: 0;
 			z-index: -1;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
 			display: flex;
 			align-items: stretch;
-			margin: 0 auto;
 			padding: 0 24px;
-			will-change: transform;
-			transform: translate3d(0, 100%, 0);
+			margin: 0 auto;
+			visibility: hidden;
+
 			// easeOutQuart
 			transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+			transform: translate3d(0, 100%, 0);
+			will-change: transform;
 			#{$self}.-opening & {
-				visibility: visible;
 				z-index: ($base-z-index + 1);
+				visibility: visible;
 				transform: translate3d(0, 0, 0);
 			}
 			#{$self}.-opened & {
-				visibility: visible;
 				z-index: ($base-z-index + 1);
+				visibility: visible;
 				transform: translate3d(0, 0, 0);
 			}
 			#{$self}.-closing & {
-				visibility: visible;
 				z-index: ($base-z-index + 1);
-				transform: translate3d(0, 100%, 0);
+				visibility: visible;
 				transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+				transform: translate3d(0, 100%, 0);
 			}
 
 			// 背景
 			&__background {
-				// デフォルトではhiddenにしておく
-				visibility: hidden;
 				position: absolute;
+				inset: 0;
 				z-index: -1;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
 				display: block;
 				height: 100%;
+
+				// デフォルトではhiddenにしておく
+				visibility: hidden;
 				background: rgba(0, 0, 0, 0.8);
 				opacity: 0;
-				will-change: opacity;
 				transition: opacity 0.2s linear;
+				will-change: opacity;
+
 				// opening == 開くTransition, opened == 開いている状態
 				#{$self}.-opening &,
 				#{$self}.-opened & {
-					visibility: visible;
 					z-index: $base-z-index;
+					visibility: visible;
 					opacity: 1;
 				}
+
 				// closing == 閉じるTransition
 				#{$self}.-closing & {
-					visibility: visible;
 					z-index: $base-z-index;
+					visibility: visible;
 					opacity: 0;
 				}
 			}
+
 			// スクロールコンテナー
 			&__scroller {
 				position: relative;
+				flex: 1 1 auto;
 				overflow-x: hidden;
 				overflow-y: scroll;
-				flex: 1 1 auto;
 			}
+
 			// コンテンツ
 			&__contents {
 				width: 100%;
-				background: #ffffff;
+				background: #fff;
 			}
 		}
 	}

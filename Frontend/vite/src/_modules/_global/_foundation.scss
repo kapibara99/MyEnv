@@ -6,42 +6,17 @@
 *::before,
 *::after {
 	box-sizing: border-box;
-}
-
-* {
-	padding: 0;
-	margin: 0;
-}
-
-html {
-	text-size-adjust: none;
-	&:focus-within {
-		scroll-behavior: smooth;
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
+	@media (prefers-reduced-motion: reduce) {
 		transition-duration: 0.01ms !important;
 		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
 		scroll-behavior: auto !important;
 	}
-	html:focus-within {
-		scroll-behavior: auto;
-	}
 }
 
-body {
-	min-height: 100vh;
-	line-height: 1.5;
-	overflow-wrap: break-word;
-	line-break: strict;
-	text-rendering: optimizeSpeed;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+* {
+	padding: 0;
+	margin: 0;
 }
 
 // text and heading and link
@@ -65,7 +40,7 @@ summary {
 // clickable
 a {
 	text-decoration-skip-ink: auto;
-	color: currentColor;
+	color: currentcolor;
 
 	// &:link,
 	// &:active {

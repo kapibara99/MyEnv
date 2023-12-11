@@ -7,6 +7,7 @@ import vitePluginSsinc from 'vite-plugin-ssinc';
 // local modules
 import { exportedInputFiles } from './vite.config.modules'; // 生成したHTML page list
 import { ejsHandler } from './vite.config.ejsHandle';
+import sassGlobImports from 'vite-plugin-sass-glob-import';
 
 const pathResolve = (v: string) => path.resolve(__dirname, v);
 
@@ -82,6 +83,9 @@ export default defineConfig({
 
 		// like EJS template HTML value
 		ejsHandler(),
+
+		// scss glob import
+		sassGlobImports(),
 	],
 	css: {
 		transformer: 'postcss',

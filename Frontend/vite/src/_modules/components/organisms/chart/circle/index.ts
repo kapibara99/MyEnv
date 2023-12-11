@@ -1,14 +1,14 @@
-import circleData from './circle.json';
-import { initializeChart } from '../chart.shared';
+// import circleData from './circle.json';
+// import { initializeChart } from '../chart.shared';
 
-const options = {
-	type: 'pie',
-	data: {
-		labels: [],
-		datasets: circleData,
-	},
-};
+// const options = {
+// 	type: 'pie',
+// 	data: {
+// 		labels: [],
+// 		datasets: circleData,
+// 	},
+// };
 
-window.addEventListener('DOMContentLoaded', () => {
-	// initializeChart(document.getElementById('chart') as HTMLCanvasElement, options);
-});
+// window.addEventListener('DOMContentLoaded', () => {
+// 	// initializeChart(document.getElementById('chart') as HTMLCanvasElement, options);
+// });
