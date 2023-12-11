@@ -1,6 +1,6 @@
 import horizontalBarData from './barHorizontal.json';
 import { initializeChart } from '../chart.shared';
-import ChartDataLabels, { Context } from 'chartjs-plugin-datalabels'; // https://chartjs-plugin-datalabels.netlify.app/guide/options.html#scriptable-options
+import ChartDataLabels, { type Context } from 'chartjs-plugin-datalabels'; // https://chartjs-plugin-datalabels.netlify.app/guide/options.html#scriptable-options
 
 const defaultFontSize = 16;
 const defaultLabelFontColor = '#333';
@@ -74,9 +74,7 @@ function initializeOptions(el: HTMLElement) {
 					},
 					color: (context: Context) => {
 						// display label font color
-						return fontColorWhiteList.includes(String(context.dataset.backgroundColor))
-							? 'white'
-							: defaultLabelFontColor;
+						return fontColorWhiteList.includes(String(context.dataset.backgroundColor)) ? 'white' : defaultLabelFontColor;
 					},
 				},
 			},
@@ -92,7 +90,7 @@ export function initializeBarHorizontalChart(target: HTMLCanvasElement) {
 	let chart = initializeChart(chartEl, baseOptions);
 
 	window.addEventListener('resize', () => {
-		if (!chart) return;
+		if (chart === undefined) return;
 		chart.destroy();
 		const options = initializeOptions(target);
 		chart = initializeChart(chartEl, options);

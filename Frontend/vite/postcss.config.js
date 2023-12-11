@@ -10,7 +10,7 @@ export default {
 		postcssSortMediaQueries(), // media queryを統一にしてくれる
 		stylelint({
 			// stulint設定を踏襲する
-			configFile: './.stylelintrc.cjs',
+			configFile: './.stylelintrc.json',
 			fix: true,
 		}),
 

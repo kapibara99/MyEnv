@@ -1,6 +1,4 @@
-import { TooltipPositionerFunction } from 'chart.js';
-import { Tooltip } from 'chart.js';
-import type { Chart, ChartType, ScriptableTooltipContext } from 'chart.js';
+import { type TooltipPositionerFunction, Tooltip, type Chart, type ChartType, type ScriptableTooltipContext } from 'chart.js';
 
 // 型を拡張
 declare module 'chart.js' {
@@ -17,14 +15,14 @@ https://tr.you84815.space/chartjs/configuration/tooltip.html
 ========================================
 */
 
-type positionersType = {
+interface positionersType {
 	x: number;
 	y: number;
-};
+}
 
 Tooltip.positioners.myCustomPositioner = (elements: any, eventPosition: any): positionersType | false => {
 	const tooltip = document.getElementById('chart-tooltip');
-	if (!tooltip || !elements.length) return false;
+	if (tooltip === null || elements.length === 0) return false;
 	tooltip.dataset.datasetIndex = elements[0].datasetIndex;
 
 	const tooltipSize = tooltip.clientWidth;
@@ -35,7 +33,7 @@ Tooltip.positioners.myCustomPositioner = (elements: any, eventPosition: any): po
 	const centerX = positionX - tooltipSizeHalf;
 	// console.log('myCustomPositioner', elements[0].element, eventPosition, positionX, centerX, tooltipSizeHalf);
 
-	if (eventPosition.chart) {
+	if (eventPosition.chart !== undefined) {
 		// 飛び出た分の位置修正
 		const rect = eventPosition.chart.canvas.getBoundingClientRect();
 		if (centerX + tooltipSize > rect.width) {
@@ -76,7 +74,7 @@ export function activatedTooltipOptions() {
 const getOrCreateTooltip = (chart: Chart) => {
 	let tooltipEl: HTMLElement | null = document.getElementById('chart-tooltip');
 
-	if (!tooltipEl) {
+	if (tooltipEl !== null) {
 		tooltipEl = document.createElement('div');
 		tooltipEl.setAttribute('id', 'chart-tooltip');
 		tooltipEl.classList.add('a-c-o-chart-tooltip');
@@ -92,6 +90,7 @@ const externalTooltipHandler = (context: ScriptableTooltipContext<'line'>) => {
 	// Tooltip Element
 	const { chart, tooltip } = context;
 	const tooltipEl = getOrCreateTooltip(chart);
+	if (tooltipEl === null) return;
 
 	// Hide if no tooltip
 	if (tooltip.opacity === 0) {
@@ -101,18 +100,18 @@ const externalTooltipHandler = (context: ScriptableTooltipContext<'line'>) => {
 
 	// set caret position
 	tooltipEl.classList.remove('above', 'below', 'no-transform');
-	if (tooltip.yAlign) {
-		tooltipEl.classList.add(tooltip.yAlign);
+	if (tooltip.yAlign !== undefined) {
+		tooltipEl.classList.add(String(tooltip.yAlign));
 	} else {
 		tooltipEl.classList.add('no-transform');
 	}
 
 	// Set Text
-	if (tooltip.body) {
+	if (tooltip.body !== undefined) {
 		const parentEl = document.createElement('div');
 
 		// heading
-		const titleLines = tooltip.title || [];
+		const titleLines = tooltip.title;
 		titleLines.forEach((title: string) => {
 			const el = document.createElement('p');
 			const text = document.createTextNode(title);
@@ -134,7 +133,7 @@ const externalTooltipHandler = (context: ScriptableTooltipContext<'line'>) => {
 			parentEl.appendChild(span);
 		});
 
-		while (tooltipEl.firstChild) {
+		while (tooltipEl.firstChild !== null) {
 			tooltipEl.firstChild.remove();
 		}
 		// Add new children

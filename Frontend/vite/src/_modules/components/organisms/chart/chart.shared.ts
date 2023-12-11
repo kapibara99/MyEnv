@@ -4,14 +4,14 @@ ChartJS.register(ArcElement, BarController, BarElement, CategoryScale, DoughnutC
 
 // chartを初期化する
 export function initializeChart(target: CanvasRenderingContext2D | HTMLCanvasElement | null, options: any) {
-	if (!target) return;
-	let chart = new ChartJS(target, options);
+	if (target === null) return;
+	const chart = new ChartJS(target, options);
 	return chart;
 }
 
 // 円形チャートなど、正方形の際に幅が飛び出る場合は親最大幅で正方形を保つ
 export function settingDoughnutSize(canvasWrapperEl: HTMLElement | null) {
-	if (!canvasWrapperEl) return;
+	if (canvasWrapperEl === null) return;
 	const { offsetWidth } = canvasWrapperEl;
 	const parentWidth = canvasWrapperEl.parentElement!.offsetWidth ?? offsetWidth; // wrapperの外側のwidth
 	// console.log(parentWidth, offsetWidth);

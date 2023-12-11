@@ -35,7 +35,7 @@
 		&-chart-legend {
 			position: relative;
 			z-index: 2;
-			margin:auto;
+			margin: auto;
 			&__list {
 				display: flex;
 				align-items: center;
@@ -45,7 +45,7 @@
 			&__item {
 				display: flex;
 				align-items: center;
-				& + &{
+				& + & {
 					margin-left: 20px;
 				}
 			}
@@ -59,7 +59,7 @@
 			}
 		}
 		// Custom Tooltip
-		&-chart-tooltip{
+		&-chart-tooltip {
 			position: absolute;
 			display: inline-block;
 			&__text {
