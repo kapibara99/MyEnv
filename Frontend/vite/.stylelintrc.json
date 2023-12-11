@@ -2,6 +2,9 @@
 	"extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order"],
 	"plugin": ["stylelint-declaration-block-no-ignored-properties"],
 	"rules": {
+		"selector-class-pattern": "",
+		"scss/at-mixin-pattern": "",
+
 		"block-no-empty": true,
 		"color-no-invalid-hex": true,
 		"comment-no-empty": true,

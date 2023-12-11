@@ -9,9 +9,8 @@
 		"build": "run-s build:*",
 		"watch": "run-p watch:*",
 		"lint": "run-s lint:*",
-		"format": "npm run lint && npm run prettier",
-		"prettier": "prettier --write \"src/**/*.{html,css,js,ts,md,json}\" --config ./.prettierrc.json",
-		"prettier:scss": "prettier --write \"src/**/*.scss\" --config ./.prettierrc.json",
+		"format": "run-s format:*",
+		"prettier": "prettier --write \"src/**/*.{html,css,scss,js,ts,md,json}\" --config ./.prettierrc.json",
 		"printESLint": "eslint --print-config ./vite.config.ts > ./eslint-setting.json",
 		"↓ integration command": "",
 		"build:typeScrypt": "tsc",
@@ -21,9 +20,12 @@
 		"watch:html": "onchange --initial -d 500 \"src/**/*.html\" -- npm run lint:html",
 		"watch:style": "onchange --initial -d 500 \"src/**/*.{css,scss}\" -- npm run lint:style",
 		"watch:eslint": "onchange --initial -d 500 \"src/**/*.ts\" -- eslint \"src/**/*.ts\" && echo Success!",
-		"lint:es": "eslint --ext .ts src --fix",
+		"lint:es": "eslint --ext .ts src",
+		"format:es": "eslint --ext .ts src --fix",
 		"lint:style": "stylelint \"src/**/*.{css,scss}\"",
+		"format:style": "stylelint \"src/**/*.{css,scss}\" --fix",
 		"lint:html": "markuplint \"src/**/*.html\"",
+		"format:html": "markuplint \"src/**/*.html\" --fix",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},
@@ -64,6 +66,7 @@
 		"typescript": "^5.2.2",
 		"vite": "^4.4.5",
 		"vite-plugin-handlebars": "^1.6.0",
+		"vite-plugin-sass-glob-import": "^3.0.2",
 		"vite-plugin-ssinc": "^1.0.8"
 	},
 	"browserslist": [

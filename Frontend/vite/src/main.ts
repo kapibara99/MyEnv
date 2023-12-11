@@ -1,5 +1,6 @@
 // css import
 import './main.scss';
+console.log('test');
 
 // import typescriptLogo from '#/typescript.svg';
 // import viteLogo from '~/vite.svg';
