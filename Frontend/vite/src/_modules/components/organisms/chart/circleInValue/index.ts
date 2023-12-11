@@ -1,8 +1,7 @@
 import circleInValueData from './circleInValue.json';
 import { initializeChart, settingDoughnutSize } from '../chart.shared';
 import type { Chart } from 'chart.js';
-function initializeOptions(el: HTMLElement) {
-	const { offsetWidth } = el;
+function initializeOptions() {
 	const defaultCenterFontSize = 48;
 	const doughnutPointer = {
 		id: 'doughnutPointer',
@@ -15,7 +14,7 @@ function initializeOptions(el: HTMLElement) {
 
 			ctx.save();
 
-			const value = data.datasets[0]!.data[0];
+			const value = data.datasets[0]!.data[0] as number | null;
 			const x = width / 2;
 			const halfFontSize = defaultCenterFontSize / 4; // line height の分だけ下げる
 			const y = (top + height) / 2 + halfFontSize;
@@ -23,7 +22,7 @@ function initializeOptions(el: HTMLElement) {
 			ctx.font = `bold ${defaultCenterFontSize}px sans-selif`;
 			ctx.fillStyle = ' #fff';
 			ctx.textAlign = 'center';
-			ctx.fillText(value ? value + '%' : 'None', x, y);
+			ctx.fillText(value !== null ? `${value.toString()}%` : 'None', x, y);
 		},
 	};
 
@@ -53,16 +52,16 @@ function initializeOptions(el: HTMLElement) {
 
 export function initializeCircleInValueChart(target: HTMLCanvasElement) {
 	const chartEl = target.getContext('2d') as CanvasRenderingContext2D;
-	const baseOptions = initializeOptions(target);
+	const baseOptions = initializeOptions();
 
 	// console.log('chart start', baseOptions);
 	settingDoughnutSize(target.parentElement);
 	let chart = initializeChart(chartEl, baseOptions);
 
 	window.addEventListener('resize', () => {
-		if (!chart) return;
+		if (chart === undefined) return;
 		chart.destroy();
-		const options = initializeOptions(target);
+		const options = initializeOptions();
 		settingDoughnutSize(target.parentElement);
 		chart = initializeChart(chartEl, options);
 	});

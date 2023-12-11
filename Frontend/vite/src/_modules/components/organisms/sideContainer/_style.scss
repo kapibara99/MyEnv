@@ -7,8 +7,34 @@
 	// 例：components/atoms → -c-a-
 	&-c-a {
 		// ブロック名
-		&-name {
-			color: red;
+		&-sideContainer {
+			&-wrapper {
+				width: 100%;
+				margin: auto;
+
+				@include mixins.mq {
+					position: relative;
+					display: flex;
+					align-items: flex-start;
+					max-width: 1300px;
+				}
+			}
+			&-content {
+				width: 100%;
+
+				@include mixins.mq {
+					width: 70%;
+					max-width: 960px;
+				}
+			}
+
+			@include mixins.mq('sp-tab') {
+				@include mixins.notShow;
+			}
+
+			position: sticky;
+			padding: 40px;
+			background-color: #fff;
 		}
 	}
 }

@@ -4,7 +4,7 @@ import { initializeChart } from '../chart.shared';
 const options = {
 	type: 'bar',
 	data: {
-		labels:[],
+		labels: [],
 		datasets: verticalBarData,
 	},
 };

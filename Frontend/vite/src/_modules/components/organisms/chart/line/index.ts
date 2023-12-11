@@ -39,16 +39,16 @@ export function initializeLineChart(target: HTMLCanvasElement) {
 	let chart = initializeChart(chartEl, baseOptions);
 
 	window.addEventListener('resize', () => {
-		if (!chart) return;
-		let hiddenIndexAry = chart.legend ? Object.assign({}, chart).legend?.legendItems?.filter(v => v.hidden) ?? [] : [];
+		if (chart === undefined) return;
+		let hiddenIndexAry = chart.legend !== undefined ? Object.assign({}, chart).legend?.legendItems?.filter(v => v.hidden) ?? [] : [];
 		chart.destroy();
 		const options = initializeOptions(target);
 		chart = initializeChart(chartEl, options);
 
-		if (hiddenIndexAry.length) {
+		if (hiddenIndexAry.length > 0) {
 			hiddenIndexAry.forEach(v => {
-				const el = (target.parentElement?.querySelector(`.${HTMLLegendClassNames.button}:nth-of-type(${v.datasetIndex ? v.datasetIndex + 1 : 1})`) as HTMLButtonElement) ?? null;
-				if (el) el.click();
+				const el = (target.parentElement?.querySelector(`.${HTMLLegendClassNames.button}:nth-of-type(${v.datasetIndex !== undefined ? v.datasetIndex + 1 : 1})`) as HTMLButtonElement) ?? null;
+				if (el !== null) el.click();
 			});
 			hiddenIndexAry = [];
 		}

@@ -37,7 +37,7 @@ export function Modal(root: HTMLElement) {
 			root.classList.remove(openingClass);
 			root.classList.add(openedClass);
 
-      // モーダル外のスクロールを止める
+			// モーダル外のスクロールを止める
 			setPreventBodyScrolling();
 			isOpenedFlag = true;
 		};
@@ -69,5 +69,5 @@ export function Modal(root: HTMLElement) {
 // initialize
 window.addEventListener('DOMContentLoaded', () => {
 	const modals = [].slice.call(document.querySelectorAll('.a-c-o-modal'));
-	modals.forEach((el: HTMLElement) => Modal(el));
+	modals.forEach((el: HTMLElement) => { Modal(el); });
 });
