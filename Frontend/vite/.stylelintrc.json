@@ -1,8 +1,7 @@
 {
 	"extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order"],
-	"plugin": ["stylelint-declaration-block-no-ignored-properties", "stylelint-prettier"],
+	"plugin": ["stylelint-declaration-block-no-ignored-properties"],
 	"rules": {
-		"prettier/prettier": true,
 		"block-no-empty": true,
 		"color-no-invalid-hex": true,
 		"comment-no-empty": true,
