@@ -6,6 +6,7 @@ html {
 	text-size-adjust: none;
 	&:focus-within {
 		scroll-behavior: smooth;
+
 		@media (prefers-reduced-motion: reduce) {
 			scroll-behavior: auto;
 		}
@@ -14,13 +15,13 @@ html {
 
 body {
 	min-height: 100vh;
+	font-family: variables.$font-family-gothic;
 	line-height: 1.5;
+	color: variables.$main-text-color;
 	overflow-wrap: break-word;
+	background-color: #333;
 	line-break: strict;
 	text-rendering: optimizespeed;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-family: variables.$font-family-gothic;
-	color: variables.$main-text-color;
-	background-color: #333;
 }

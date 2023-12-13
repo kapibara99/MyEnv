@@ -6,6 +6,7 @@
 *::before,
 *::after {
 	box-sizing: border-box;
+
 	@media (prefers-reduced-motion: reduce) {
 		transition-duration: 0.01ms !important;
 		animation-duration: 0.01ms !important;
@@ -55,6 +56,7 @@ button,
 	background: none;
 	border: none;
 }
+
 summary {
 	display: block;
 	&::-webkit-details-marker {
