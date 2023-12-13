@@ -7,10 +7,16 @@
 	// 例：components/atoms → -c-a-
 	&-c-a {
 		// ブロック名
-		&-caption {
-			color: red;
-			&__icon {
-				width: 1em;
+		&-textLink {
+			//
+			&.-underline{}
+			&.-add-icon{
+				display: flex;
+				align-items: center;
+			}
+			&__icon{
+				width: 1.2em;
+				height: 1.2em;
 				margin-right: 0.5em;
 			}
 		}
