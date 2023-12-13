@@ -1,10 +1,13 @@
+// 開いている時のクラス名
 const ACC_OPENED_CLASS = '-opened';
 
+// 共通イージング
 const animationTiming: KeyframeAnimationOptions = {
 	duration: 200,
 	easing: 'ease-out',
 };
 
+// アコーディオンを閉じるときのキーフレーム
 const closingAnimKeyframes = (content: HTMLElement): Keyframe[] => [
 	{
 		height: content.offsetHeight + 'px', // height: "auto"だとうまく計算されないため要素の高さを指定する
@@ -14,9 +17,7 @@ const closingAnimKeyframes = (content: HTMLElement): Keyframe[] => [
 	},
 ];
 
-/**
- * アコーディオンを開くときのキーフレーム
- */
+// アコーディオンを開くときのキーフレーム
 const openingAnimKeyframes = (content: HTMLElement) => [
 	{
 		height: 0,
@@ -27,7 +28,7 @@ const openingAnimKeyframes = (content: HTMLElement) => [
 ];
 
 function initAccordionEvent(openFlag: boolean, accEl: HTMLDetailsElement, ingFlag?: boolean) {
-	if (ingFlag) return; // 連打時のskip
+	if (ingFlag === true) return; // 連打時のskip
 	const containerEl = accEl.querySelector('.js-accordion-container') as HTMLElement;
 	if (openFlag) {
 		accEl.setAttribute('open', 'true');
@@ -62,5 +63,5 @@ function initializeAccordion(accEl: HTMLDetailsElement) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-	[].slice.call(document.querySelectorAll('.js-accordion')).forEach((el: HTMLDetailsElement) => initializeAccordion(el));
+	[].slice.call(document.querySelectorAll('.js-accordion')).forEach((el: HTMLDetailsElement) => { initializeAccordion(el); });
 });
