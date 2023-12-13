@@ -1,14 +1,18 @@
-@use '@/_global/variables/variables';
-@use '@/_global/functions/mixins';
-
 // 接頭辞 共通
 .a {
-	// 接頭辞 親ディレクトリ - 子ディレクトリ
-	// 例：components/atoms → -c-a-
-	&-c-a {
-		// ブロック名
-		&-name {
-			color: red;
+	&-c-o {
+		&-accordion {
+			// コンテンツの中身をアクセス不可にする場合
+			// $root: &;
+			// &[open] {
+			// 	#{$root}__container {
+			// 		visibility: visible;
+			// 	}
+			// }
+			&__container {
+				// visibility: hidden;
+				overflow: hidden;
+			}
 		}
 	}
 }

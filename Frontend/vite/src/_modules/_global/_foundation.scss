@@ -48,11 +48,19 @@ a {
 	// }
 }
 
-button {
+button,
+[role='button'] {
 	appearance: none;
 	cursor: pointer;
 	background: none;
 	border: none;
+}
+summary {
+	display: block;
+	&::-webkit-details-marker {
+		/* Safariで表示されるデフォルトの三角形アイコンを消します */
+		display: none;
+	}
 }
 
 // img
