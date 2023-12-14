@@ -1,0 +1,53 @@
+{
+	"updateTime": "2021-01-01T00:00:00Z",
+	"teams": [
+		{
+			"teamId": 1,
+			"mainTeamName": "Team 1",
+			"subTeamName": "XXリーグ N位",
+			"result": [1, 1, 0]
+		},
+		{
+			"teamId": 1,
+			"mainTeamName": "Team 2",
+			"subTeamName": "XXリーグ N位",
+			"result": [0, 0, 0]
+		},
+		{
+			"teamId": 1,
+			"mainTeamName": "Team 3",
+			"subTeamName": "XXリーグ N位",
+			"result": [0, 0, 0]
+		},
+		{
+			"teamId": 1,
+			"mainTeamName": "Team 4",
+			"subTeamName": "XXリーグ N位",
+			"result": [1, 0, 0]
+		},
+		{
+			"teamId": 1,
+			"mainTeamName": "Team 5",
+			"subTeamName": "XXリーグ N位",
+			"result": [1, 0, 0]
+		},
+		{
+			"teamId": 1,
+			"mainTeamName": "Team 6",
+			"subTeamName": "XXリーグ N位",
+			"result": [0, 0, 0]
+		},
+		{
+			"teamId": 1,
+			"mainTeamName": "Team 7",
+			"subTeamName": "XXリーグ N位",
+			"result": [1, 1, 0]
+		},
+		{
+			"teamId": 1,
+			"mainTeamName": "Team 8",
+			"subTeamName": "XXリーグ N位",
+			"result": [0, 0, 0]
+		}
+	]
+}
