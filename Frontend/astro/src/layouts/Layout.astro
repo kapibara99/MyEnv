@@ -1,0 +1,50 @@
+---
+import { DOMAIN_NAME, SITE_NAME, SITE_TD_END_TEMPLATE } from '@/model/siteInfo'
+import '@/styles/base.scss'
+
+interface Props {
+	title: string
+	description: string
+	canonical: string
+	ogImgURL?: string
+}
+const { title, description, canonical, ogImgURL } = Astro.props
+const ogpImgURL = DOMAIN_NAME + (ogImgURL ?? '/ogp/ogp.png')
+const publicCanonical = DOMAIN_NAME + canonical
+const publicDecsription = description + SITE_TD_END_TEMPLATE
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>{title + SITE_TD_END_TEMPLATE}</title>
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={publicDecsription} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="noydir,noodp,index,follow" />
+		<link rel="canonical" href={publicCanonical} />
+
+		<!-- icon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.svg" />
+
+		<!-- ogp -->
+		<meta name="og:title" content={title + SITE_TD_END_TEMPLATE} />
+		<meta name="og:type" content="website" />
+		<meta name="og:description" content={publicDecsription} />
+		<meta name="og:url" content={publicCanonical} />
+		<meta name="og:image" content={ogpImgURL} />
+		<meta name="og:site_name" content={SITE_NAME} />
+		<!-- //ogp -->
+
+		<!-- twitter card -->
+		<meta name="twitter:image:src" content={ogpImgURL} />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:description" content={publicDecsription} />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
