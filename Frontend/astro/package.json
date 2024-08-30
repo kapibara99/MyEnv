@@ -1,0 +1,57 @@
+{
+	"name": "frontend",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"watch": "npm run watch:prettier",
+		"format": "npm run lint:es && npm run prettier",
+		"start": "astro dev",
+		"build": "astro check && tsc --noEmit && astro build",
+		"preview": "astro preview",
+		"lint:es": "eslint --ext \"src/**/*.ts\" \"src/**/*.astro\" --fix",
+		"prettier": "prettier --write src/**/*.{astro,ts,tsx,scss,json} --config ./.prettierrc.json",
+		"watch:prettier": "onchange -d 1000 \"src/**/*.{astro,ts,tsx,scss,json}\" -- prettier --write --ignore-unknown {{changed}}",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.5.6",
+		"@astrojs/react": "^3.0.10",
+		"@headlessui/react": "^1.7.19",
+		"@types/react": "^18.2.61",
+		"@types/react-dom": "^18.2.19",
+		"astro": "^4.4.9",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"typescript": "^5.3.3"
+	},
+	"devDependencies": {
+		"@chromatic-com/storybook": "^1.2.25",
+		"@iconify/iconify": "^3.1.1",
+		"@storybook/addon-essentials": "^8.0.5",
+		"@storybook/addon-interactions": "^8.0.5",
+		"@storybook/addon-links": "^8.0.5",
+		"@storybook/addon-onboarding": "^8.0.5",
+		"@storybook/blocks": "^8.0.5",
+		"@storybook/react": "^8.0.5",
+		"@storybook/react-vite": "^8.0.5",
+		"@storybook/test": "^8.0.5",
+		"@typescript-eslint/eslint-plugin": "^7.4.0",
+		"@typescript-eslint/parser": "^7.4.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-astro": "^0.33.1",
+		"eslint-plugin-storybook": "^0.8.0",
+		"onchange": "^7.1.0",
+		"prettier": "^3.2.5",
+		"prettier-plugin-astro": "^0.12.2",
+		"sass": "^1.75.0",
+		"satori": "^0.10.13",
+		"sharp": "^0.33.3",
+		"storybook": "^8.0.5"
+	},
+	"volta": {
+		"node": "18.17.1",
+		"npm": "9.6.7"
+	}
+}
