@@ -1,0 +1,40 @@
+@use './reset.scss';
+@use './variables.scss';
+@use './mixin';
+
+html {
+	text-size-adjust: none;
+	&:focus-within {
+		scroll-behavior: smooth;
+
+		@media (prefers-reduced-motion: reduce) {
+			scroll-behavior: auto;
+		}
+	}
+}
+
+body {
+	min-height: 100vh;
+	font-family: variables.$font-family-gothic;
+	@include mixin.font(16, 16, 20, 400);
+	@include mixin.basicBgColor();
+	@include mixin.basicFontColor();
+	overflow-wrap: break-word;
+	line-break: strict;
+	word-break: auto-phrase;
+	text-rendering: optimizespeed;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family:
+		Menlo,
+		Monaco,
+		Lucida Console,
+		Liberation Mono,
+		DejaVu Sans Mono,
+		Bitstream Vera Sans Mono,
+		Courier New,
+		monospace;
+}

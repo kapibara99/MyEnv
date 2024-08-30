@@ -8,39 +8,43 @@
 	&-c-a {
 		// ブロック名
 		&-heading {
-			line-height: 1.5;
 			font-weight: 600;
+			line-height: 1.5;
 			&.-h1 {
 				font-size: 28px;
-				@include mixins.mq() {
+
+				@include mixins.mq {
 					font-size: 32px;
 				}
 			}
 			&.-h2 {
 				font-size: 24px;
-				@include mixins.mq() {
+
+				@include mixins.mq {
 					font-size: 28px;
 				}
 			}
 			&.-h3 {
 				font-size: 20px;
-				@include mixins.mq() {
+
+				@include mixins.mq {
 					font-size: 24px;
 				}
 			}
 			&.-h4 {
 				font-size: 18px;
-				@include mixins.mq() {
+
+				@include mixins.mq {
 					font-size: 20px;
 				}
 			}
 
 			// add icon
-			&.-add-icon{
+			&.-add-icon {
 				display: flex;
 				align-items: center;
 			}
-			&__icon{
+			&__icon {
 				width: 1.2em;
 				height: 1.2em;
 				margin-right: 0.5em;

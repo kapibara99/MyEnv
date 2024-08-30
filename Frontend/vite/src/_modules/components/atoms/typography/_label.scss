@@ -8,14 +8,16 @@
 	&-c-a {
 		// ブロック名
 		&-label {
-			line-height: 1;
 			padding: 4px 8px;
-			font-weight: 400;
 			font-size: 14px;
+			font-weight: 400;
+			line-height: 1;
 			border-radius: 20px;
-			@include mixins.mq() {
+
+			@include mixins.mq {
 				font-size: 16px;
 			}
+
 			// color
 		}
 	}

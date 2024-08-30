@@ -1,0 +1,27 @@
+{
+	"printWidth": 200,
+	"tabWidth": 2,
+	"useTabs": true,
+	"singleQuote": true,
+	"semi": false,
+	"trailingComma": "all",
+	"bracketSpacing": true,
+	"bracketSameLine": true,
+	"arrowParens": "avoid",
+	"endOfLine": "auto",
+	"overrides": [
+		{
+			"files": "*.svg",
+			"options": {
+				"parser": "html"
+			}
+		},
+		{
+			"files": "*.astro",
+			"options": {
+				"parser": "astro"
+			}
+		}
+	],
+	"plugins": ["prettier-plugin-astro"]
+}

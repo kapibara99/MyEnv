@@ -69,5 +69,7 @@ export function Modal(root: HTMLElement) {
 // initialize
 window.addEventListener('DOMContentLoaded', () => {
 	const modals = [].slice.call(document.querySelectorAll('.a-c-o-modal'));
-	modals.forEach((el: HTMLElement) => { Modal(el); });
+	modals.forEach((el: HTMLElement) => {
+		Modal(el);
+	});
 });
