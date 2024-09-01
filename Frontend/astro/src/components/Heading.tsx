@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 
 export default function Heading(props: { str: String }) {
-	return <h2>{props.str}</h2>
+	const test = 'test';
+	return <h2>{props.str}</h2>;
 }

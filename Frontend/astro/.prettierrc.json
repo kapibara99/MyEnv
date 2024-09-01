@@ -3,12 +3,13 @@
 	"tabWidth": 2,
 	"useTabs": true,
 	"singleQuote": true,
-	"semi": false,
+	"semi": true,
 	"trailingComma": "all",
 	"bracketSpacing": true,
 	"bracketSameLine": true,
 	"arrowParens": "avoid",
 	"endOfLine": "auto",
+	"plugins": ["prettier-plugin-astro"],
 	"overrides": [
 		{
 			"files": "*.svg",
@@ -23,5 +24,5 @@
 			}
 		}
 	],
-	"plugins": ["prettier-plugin-astro"]
+	"astroAllowShorthand": true
 }

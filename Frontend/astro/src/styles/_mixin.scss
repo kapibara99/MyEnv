@@ -2,18 +2,17 @@
 
 // basic dark mode setting
 @mixin basicFontColor() {
-  color: variables.$basic-font-color;
+	color: variables.$basic-font-color;
 	@media (prefers-color-scheme: dark) {
 		color: variables.$dark-font-color;
 	}
 }
 @mixin basicBgColor() {
-  background-color: variables.$basic-bg-color;
+	background-color: variables.$basic-bg-color;
 	@media (prefers-color-scheme: dark) {
 		background-color: variables.$dark-bg-color;
 	}
 }
-
 
 // font size setting
 @mixin font($size: null, $height: null, $spacing: null, $weight: null) {

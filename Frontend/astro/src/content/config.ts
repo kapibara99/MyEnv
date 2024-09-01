@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content'
+import { defineCollection, z } from 'astro:content';
 
 export const collections = {
 	ogp: defineCollection({
@@ -6,4 +6,4 @@ export const collections = {
 			title: z.string(),
 		}),
 	}),
-}
+};
