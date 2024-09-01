@@ -10,7 +10,7 @@
 		"jsxImportSource": "react"
 	},
 	"target": "ES2020",
-	"include": ["src", "public"],
+	"include": ["src", "public", "./"],
 
 	/* Linting */
 	"allowImportingTsExtensions": true, // TypeScript ファイルが .ts 、 .mts 、または .tsx などの TypeScript 固有の拡張子を使用して相互にインポートできるようになる

@@ -1,8 +1,8 @@
-import Heading from './Heading'
+import Heading from './Heading';
 
 export default {
 	title: 'Components/Atoms',
 	component: Heading,
-}
+};
 
-export const BasicHeading = () => <Heading str="aaa" />
+export const BasicHeading = () => <Heading str="aaa" />;

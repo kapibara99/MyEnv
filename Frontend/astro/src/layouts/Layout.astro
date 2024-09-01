@@ -1,17 +1,17 @@
 ---
-import { DOMAIN_NAME, SITE_NAME, SITE_TD_END_TEMPLATE } from '@/model/siteInfo'
-import '@/styles/base.scss'
+import { DOMAIN_NAME, SITE_NAME, SITE_TD_END_TEMPLATE } from '@/model/siteInfo';
+import '@/styles/base.scss';
 
 interface Props {
-	title: string
-	description: string
-	canonical: string
-	ogImgURL?: string
+	title: string;
+	description: string;
+	canonical: string;
+	ogImgURL?: string;
 }
-const { title, description, canonical, ogImgURL } = Astro.props
-const ogpImgURL = DOMAIN_NAME + (ogImgURL ?? '/ogp/ogp.png')
-const publicCanonical = DOMAIN_NAME + canonical
-const publicDecsription = description + SITE_TD_END_TEMPLATE
+const { title, description, canonical, ogImgURL } = Astro.props;
+const ogpImgURL = DOMAIN_NAME + (ogImgURL ?? '/ogp/ogp.png');
+const publicCanonical = DOMAIN_NAME + canonical;
+const publicDecsription = description + SITE_TD_END_TEMPLATE;
 ---
 
 <!doctype html>
