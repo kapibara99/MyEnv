@@ -1,8 +1,35 @@
-# Astro Starter Kit: Basics
+# kapy UI catalog used Astro
 
 ## memo
 
-- bashで開かないと、prettierでエラーになる
+### bashで開かないと、prettierでエラーになる
+
+もっというと、`astro check` などもエラーになる
+
+さらに、bashでも、前の実行から間が空いてない（10秒程度？）と、エラーになる
+
+```
+$ npm run build
+
+> frontend@0.0.1 build
+> astro check && tsc --noEmit && astro build
+
+16:31:22 Types generated 790ms
+16:31:22 [check] Getting diagnostics for Astro files in ...
+assertion failed [block != nullptr]: BasicBlock requested for unrecognized address
+(BuilderBase.h:550 block_for_offset)
+ sh: line 1: 92572 Abort trap: 6           astro check
+```
+
+### dependencies にreactなどが入っている場合、プロジェクトに使用されていなくても、JSはビルドされる
+
+`_astro/client.XXXXXX.js` のこと
+
+HTMLに読まれている訳ではないから、UX上は問題ないけど、ビルドパフォーマンス的には無駄なので、注意
+
+`client:load` などでCSR設定を行うと、一緒に読まれたりする
+
+## 元README
 
 ```sh
 npm create astro@latest -- --template basics

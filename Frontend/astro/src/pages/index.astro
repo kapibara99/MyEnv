@@ -1,17 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Heading from '@/components/Heading';
-import IconifyIcon from '@/components/common/iconTemplate/IconifyIcon.astro';
 ---
 
 <Layout title="Welcome to Astro." description="description" canonical="/index.html">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<Heading str="Hello" />
+		<Heading str="Hello" client:load />
 		<a href="./hoge/">link</a>
-		<IconifyIcon iconName="mdi:home" alt="ホーム" />
-		<IconifyIcon iconName="mdi:cog" alt="設定" />
-		<IconifyIcon iconName="mdi:edit" alt="編集" />
 	</main>
 </Layout>
 

@@ -4,7 +4,7 @@
 		"browser": true,
 		"es2021": true
 	},
-	"ignorePatterns": ["*.js.ts", "node_modules/*"], // js like なファイルをlint対象外にする
+	"ignorePatterns": ["*.js.ts", "node_modules/*", "dist/*"], // js like なファイルをlint対象外にする
 	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:astro/recommended", "plugin:storybook/recommended", "eslint-config-prettier", "prettier"],
 	"parserOptions": {
 		"ecmaVersion": "latest",
@@ -24,13 +24,6 @@
 			"parserOptions": {
 				"parser": "@typescript-eslint/parser",
 				"extraFileExtensions": [".astro"]
-			}
-		},
-		{
-			// トリプルスラッシュはできるだけ使用不可
-			"files": ["./src/vite-env.d.ts"],
-			"rules": {
-				"@typescript-eslint/triple-slash-reference": 0
 			}
 		}
 	],
