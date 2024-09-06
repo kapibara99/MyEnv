@@ -10,7 +10,39 @@
   - 静的だから特異なことがなくともパフォーマンス高い
 - Tailwind あたりは、一部コンポーネントで試してみてもいい
 
+## 完全静的（ビルド後に手で更新したり触れるくらい）にするには？
+
+### build.inlineStylesheets: 'never'を設定する
+
+### css(sass)は、importするastroファイルの数だけ、ビルドされる
+
+例）
+
+```
+a.css → a.html,b.htmlそれぞれにimportされている場合、index.aaa.css,index.bbb.cssとして、中身が同じでも別ファイル出力になる
+c.css → layout.astroにimportして、a.html,b.htmlに読ませる場合、index.ccc.cssとして、一つのみビルドされる
+つまり、scss → index.scss → layout or template componentにすることで、ある程度CSSを集約したファイルビルドにできる
+```
+
 ## memo
+
+### viteでcssファイルを分割したとき、buildにかかる順で読み込みが決定される
+
+```
+index.html
+  index.scss
+test.html
+  reset.scss
+  index.scss
+```
+
+としたときに、test.htmlのdistビルドは
+
+index.css→reset.css
+
+という順番になる。
+
+基本的には、resetやsetup.cssはいじらないことのが多いから、問題ないけど、そりゃあないぜ、とっつぁん
 
 ### bashで開かないと、prettierでエラーになる
 
