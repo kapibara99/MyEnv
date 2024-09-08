@@ -8,9 +8,29 @@
   - スタイル定義が CSS というのが、フロント出身でとっつきやすい
   - CSS in JS などのように lint の設定を変に tsx などにしなくて済むし、補完もしやすい
   - 静的だから特異なことがなくともパフォーマンス高い
+  - 型定義に[happy-css-modules](https://github.com/mizdra/happy-css-modules)を使用
 - Tailwind あたりは、一部コンポーネントで試してみてもいい
 
 ## 完全静的（ビルド後に手で更新したり触れるくらい）にするには？
+
+### 出力されるHTMLのcssファイルの読み込みには癖があるので、力技的に置換する
+
+おそらく50音？で並び、resetやbaseよりも、コンポーネントのstyleが先に記載・適用されてしまうため、依存関係がごちゃごちゃになる
+
+```
+index.html
+  index.scss
+test.html
+  reset.scss
+  index.scss
+```
+
+としたときに、test.htmlのdistビルドは
+
+index.css→reset.css
+
+という順番になる。
+一旦、nodeスクリプトで、置換されるように、改訂しているが、どうにかならないかね
 
 ### build.inlineStylesheets: 'never'を設定する
 
@@ -26,23 +46,10 @@ c.css → layout.astroにimportして、a.html,b.htmlに読ませる場合、ind
 
 ## memo
 
-### viteでcssファイルを分割したとき、buildにかかる順で読み込みが決定される
+### ワークスペースのtypescriptバージョンを使用しないとき、astro拡張機能などとjs/tsの他拡張機能がバッティングする
 
-```
-index.html
-  index.scss
-test.html
-  reset.scss
-  index.scss
-```
-
-としたときに、test.htmlのdistビルドは
-
-index.css→reset.css
-
-という順番になる。
-
-基本的には、resetやsetup.cssはいじらないことのが多いから、問題ないけど、そりゃあないぜ、とっつぁん
+- https://github.com/withastro/language-tools/issues/850
+- https://github.com/microsoft/vscode/issues/174209
 
 ### bashで開かないと、prettierでエラーになる
 
