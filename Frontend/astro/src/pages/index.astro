@@ -1,20 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Heading from '@/components/Heading';
+import Headings from '@/components/common/typography/typography.astro';
 ---
 
 <Layout title="Welcome to Astro." description="description" canonical="/index.html">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<Heading str="Hello" client:load />
+		<Headings text="Hello index" />
 		<a href="./hoge/">link</a>
 	</main>
 </Layout>
-
-<style lang="scss">
-	@use '@/styles/variables' as *;
-	@use '@/styles/mixin' as *;
-	h1 {
-		@include font(40, 40, null, 700);
-	}
-</style>

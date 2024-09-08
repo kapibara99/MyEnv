@@ -9,23 +9,39 @@ export default defineConfig({
 		}),
 	],
 	build: {
-		inlineStylesheets: 'never', // https://docs.astro.build/ja/reference/configuration-reference/#buildinlinestylesheets
+		// https://docs.astro.build/ja/reference/configuration-reference/
+		inlineStylesheets: 'never',
+		format: 'preserve',
 	},
 	vite: {
 		build: {
 			rollupOptions: {
 				output: {
-					// 細かいディレクトリ指定をしたいなら、下記を参照
-					// https://cumak.net/blog/astro-build-css/
+					// assetのファイル名や細かいディレクトリ指定を行う
+					// 参考) https://cumak.net/blog/astro-build-css/
 					assetFileNames: assetInfo => {
 						let extType = assetInfo.name.split('.')[1];
-						if (/ttf|otf|eot|woff|woff2/i.test(extType)) {
+						let fileName = '';
+						if (/css/i.test(extType)) {
+							//assetInfo.sourceの中から文字列を探して値を取得する
+							let firstLine = assetInfo.source.split(/\/\*|\*\//).find(line => line.includes('buildOutputFile:'));
+							console.log(firstLine);
+							if (firstLine) {
+								firstLine = firstLine.split('buildOutputFile:')[1].trim();
+								//ダブルクォーテーションとセミコロンとスペースを削除
+								fileName = firstLine.replace(/['";\s]/g, '') + '.css';
+							} else {
+								//「-index」を削除したファイル名を取得
+								fileName = assetInfo.name.replace('-index', '');
+							}
+						} else if (/ttf|otf|eot|woff|woff2/i.test(extType)) {
 							extType = 'fonts';
-						}
-						if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+						} else if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
 							extType = 'images';
 						}
-						return `_assets/${extType}/[name][extname]`;
+
+						const srcPath = fileName !== '' ? `_assets/${extType}/${fileName}` : `_assets/${extType}/[name][extname]`;
+						return srcPath;
 					},
 				},
 			},

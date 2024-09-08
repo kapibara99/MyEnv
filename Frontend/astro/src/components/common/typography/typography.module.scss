@@ -1,0 +1,14 @@
+@charset 'UTF-8';
+
+.typography {
+	color: red;
+	&_h1 {
+		font-size: 2rem;
+	}
+	&_h2 {
+		font-size: 1.5rem;
+	}
+	&_h3 {
+		font-size: 1.25rem;
+	}
+}

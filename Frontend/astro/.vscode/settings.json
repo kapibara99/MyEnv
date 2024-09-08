@@ -1,0 +1,16 @@
+{
+	// 標準のフォーマッターを Prettier に設定
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	// 保存時の実行アクション
+	"editor.codeActionsOnSave": {
+		// import されていないモジュールを自動補完
+		"source.addMissingImports": true
+	},
+	// 保存時およびペースト時に自動フォーマットを実行する
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"explorer.fileNesting.patterns": {
+		"*.module.css": "*.module.css.d.ts, *.module.css.d.ts.map"
+	},
+	"prettier.documentSelectors": ["**/*.astro"]
+}
