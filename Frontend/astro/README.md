@@ -1,5 +1,24 @@
 # kapy UI catalog used Astro
 
+## 開発手順
+
+### コーディング
+
+1. `npm run dev`
+   1. ローカルサーバー立ち上がる
+2. 別窓で`npm run watch`
+   1. eslint watch
+   2. hcm watch (CSS moduleの型定義の動的生成)
+3. 適宜`npm run format`する
+
+### ビルド
+
+1. `astro check`
+2. `tsc --noEmit`
+3. `astro buikd`
+4. `npm run afterBuild`
+   1. newOrderCSSFiles.js (CSSファイルの依存関係を力技的に解決する。出力環境のみ、変な順番になるため)
+
 ## スタイリング戦略
 
 いろいろ考えた結果、以下とした。

@@ -5,7 +5,7 @@ import { getOgImage } from '@/components/common/ogImage/ogImage';
 export async function getStaticPaths() {
 	const posts = await getCollection('ogp');
 	return (
-		posts?.map((post: any) => ({
+		posts?.map(post => ({
 			params: { slug: post.slug },
 		})) ?? []
 	);
