@@ -1,7 +1,6 @@
 @charset 'UTF-8';
 
 .typography {
-	color: red;
 	&_h1 {
 		font-size: 2rem;
 	}
@@ -10,5 +9,8 @@
 	}
 	&_h3 {
 		font-size: 1.25rem;
+	}
+	&_h4 {
+		font-size: 1rem;
 	}
 }

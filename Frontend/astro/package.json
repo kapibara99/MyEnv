@@ -23,7 +23,7 @@
 		"astro": "^4.4.9",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"typescript": "^5.3.3"
+		"typescript": "^5.4.5"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^1.2.25",
