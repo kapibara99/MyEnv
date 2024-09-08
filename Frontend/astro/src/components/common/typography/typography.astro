@@ -1,0 +1,11 @@
+---
+interface Props {
+	text: string;
+}
+import styles from './typography.module.scss';
+const { text } = Astro.props;
+---
+
+<h2 class={styles.typography}>{text}</h2>
+<h2 class={styles.typography}>{text}</h2>
+<h2 class={styles.typography}>{text}</h2>

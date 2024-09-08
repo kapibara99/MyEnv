@@ -26,3 +26,7 @@ pnpm-debug.log*
 storybook-static
 
 *storybook.log
+
+# happy-css-modules
+*.module.scss.d.ts
+*.module.scss.d.ts.map
