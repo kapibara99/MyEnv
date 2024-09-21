@@ -1,16 +1,22 @@
 @charset 'UTF-8';
 
-/*
-========================================
-font family
-========================================
-*/
+:root {
+	--font-family: 'Noto Sans JP', sans-serif;
 
-// ゴシック系日本語フォント
-$font-family-gothic: 'Helvetica Neue', helvetica, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', arial, 'Yu Gothic', meiryo, sans-serif;
+	--font-size-1: 1.2rem;
+	--font-size-2: 1.4rem;
+	--font-size-3: 1.6rem;
+	--font-size-4: 1.8rem;
+	--font-size-5: 2rem;
+	--font-size-6: 2.2rem;
+	--font-size-7: 2.4rem;
+	--font-size-8: 2.6rem;
+	--font-size-9: 2.8rem;
+	--font-size-10: 3rem;
+	--font-size-11: 3.2rem;
 
-// 明朝系日本語フォント
-$font-family-mincho: 'Times New Roman', yumincho, 'Hiragino Mincho ProN', 'Yu Mincho', 'MS PMincho', serif;
+	--foregroundColor: rgb(221 243 228);
+	--backgroundColor: rgb(24 121 78);
 
-// 〇〇系××フォント
-$font-family-xxx: serif;
+	--headingColor: rgb(255 255 1);
+}

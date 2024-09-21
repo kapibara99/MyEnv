@@ -1,6 +1,6 @@
 ---
+import BaseStyle from '@/components/basestyle/baseStyle.astro';
 import { DOMAIN_NAME, SITE_NAME, SITE_TD_END_TEMPLATE } from '@/model/siteInfo';
-import '@/styles/base.scss';
 
 interface Props {
 	title: string;
@@ -43,6 +43,9 @@ const publicDecsription = description + SITE_TD_END_TEMPLATE;
 		<meta name="twitter:image:src" content={ogpImgURL} />
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:description" content={publicDecsription} />
+
+		<!-- style -->
+		<BaseStyle />
 	</head>
 	<body>
 		<slot />
