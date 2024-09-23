@@ -8,7 +8,7 @@
 		"format": "run-p format:*",
 		"preview": "astro preview",
 		"build": "astro check && tsc --noEmit && astro build && npm run afterBuild",
-		"afterBuild": "node scripts/newOrderCSSFiles.js",
+		"afterBuild": "node scripts/newOrderCSSFiles.js && node scripts/removeCommentsInCSSFiles.js",
 		"format:eslint": "eslint --ext \"./**/*.ts\" \"./**/*.astro\" --fix",
 		"format:prettier": "prettier --write src/**/*.{astro,ts,tsx,scss,json} --config ./.prettierrc.json",
 		"watch:eslint": "onchange --initial -d 500 \"src/**/*.{ts,tsx}\" -- eslint \"src/**/*.{ts,tsx}\" && echo Success!",
@@ -20,6 +20,9 @@
 		"@astrojs/check": "^0.5.6",
 		"@astrojs/react": "^3.0.10",
 		"astro": "^4.4.9",
+		"astro-compress": "^2.3.1",
+		"astro-purgecss": "^4.6.0",
+		"purgecss": "^6.0.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"typescript": "^5.4.5"
@@ -38,7 +41,9 @@
 		"@types/react-dom": "^18.3.0",
 		"@typescript-eslint/eslint-plugin": "^7.4.0",
 		"@typescript-eslint/parser": "^7.4.0",
+		"autoprefixer": "^10.4.20",
 		"cheerio": "^1.0.0",
+		"cssnano": "^7.0.6",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-astro": "^0.33.1",
@@ -46,6 +51,7 @@
 		"happy-css-modules": "^3.1.1",
 		"npm-run-all": "^4.1.5",
 		"onchange": "^7.1.0",
+		"postcss-discard-comments": "^7.0.3",
 		"prettier": "^3.2.5",
 		"prettier-plugin-astro": "^0.12.2",
 		"sass": "^1.75.0",
@@ -53,6 +59,11 @@
 		"sharp": "^0.33.3",
 		"storybook": "^8.0.5"
 	},
+	"browserslist": [
+		"last 3 versions , not dead",
+		"not IE >= 0",
+		"iOS >= 12, Safari >= 14"
+	],
 	"volta": {
 		"node": "18.17.1",
 		"npm": "9.6.7"

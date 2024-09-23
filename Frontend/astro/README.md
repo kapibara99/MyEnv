@@ -18,6 +18,9 @@
 3. `astro buikd`
 4. `npm run afterBuild`
    1. newOrderCSSFiles.js (CSSファイルの依存関係を力技的に解決する。出力環境のみ、変な順番になるため)
+   2. removeCommentsInCSSFiles.js (CSSファイルの中のファイル名用コメントを力技で消す。と言いつつ全消ししているのでスマートに今後したい。。)
+      https://github.com/cssnano/cssnano/tree/master/packages/postcss-discard-comments
+   3. aaa
 
 ## スタイリング戦略
 
@@ -31,6 +34,12 @@
 - Tailwind あたりは、一部コンポーネントで試してみてもいい
 
 ## 完全静的（ビルド後に手で更新したり触れるくらい）にするには？
+
+## charset指定はとてもよしなにされる件
+
+charset指定が不要（コメントやfont指定などでも必要ない場合）の時に、自動で取ってくれるらしい
+rollupOptionで付与してもその後ろで消される
+ので、要件で「必ず付与して」というのがある場合、buildを完全に終えたフェーズ（afterBuildコマンド）で付与する必要がある
 
 ### 出力されるHTMLのcssファイルの読み込みには癖があるので、力技的に置換する
 

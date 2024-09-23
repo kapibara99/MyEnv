@@ -34,7 +34,7 @@ function rearrangeCSS(htmlFilePath, newOrder) {
 
 	// HTMLファイルを書き換え
 	fs.writeFileSync(htmlFilePath, $.html());
-	console.log('処理終了:', htmlFilePath);
+	console.log('処理終了:', htmlFilePath, ' css file list ↓ \n' + newOrderCssFiles.join('\n'));
 }
 
 const newOrder = ['base.css', 'style.css']; // 新しい順序 存在しないファイル名の場合は、スキップされる
@@ -43,7 +43,7 @@ glob('dist/**/*.html', (err, files) => {
 	if (err) {
 		console.error(err);
 	} else {
-		console.log('処理対象一覧:', files); // 取得したファイルパスの一覧
+		console.log('処理開始:newOrderCSSFiles', '処理対象一覧:', files); // 取得したファイルパスの一覧
 		// 各ファイルに対して処理を行う
 		files.forEach(file => {
 			try {
@@ -54,4 +54,5 @@ glob('dist/**/*.html', (err, files) => {
 			}
 		});
 	}
+	console.log('処理完了:newOrderCSSFiles', '\n\n');
 });
