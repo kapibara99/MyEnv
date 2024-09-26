@@ -1,16 +1,19 @@
-@use './_variables.scss';
+@use './variables';
 
 // basic dark mode setting
 @mixin basicFontColor() {
-	color: variables.$basic-font-color;
+	color: $basic-font-color;
+
 	@media (prefers-color-scheme: dark) {
-		color: variables.$dark-font-color;
+		color: $dark-font-color;
 	}
 }
+
 @mixin basicBgColor() {
-	background-color: variables.$basic-bg-color;
+	background-color: $basic-bg-color;
+
 	@media (prefers-color-scheme: dark) {
-		background-color: variables.$dark-bg-color;
+		background-color: $dark-bg-color;
 	}
 }
 
@@ -45,7 +48,7 @@ $breakpoints: (
 );
 
 @mixin mq($breakpoint: pc) {
-	@media #{map-get($breakpoints, $breakpoint)} {
+	@media #{map.get($breakpoints, $breakpoint)} {
 		@content;
 	}
 }
