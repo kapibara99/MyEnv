@@ -1,4 +1,5 @@
 @charset 'UTF-8';
+
 /*! buildOutputFile: components */
 
 .typography {
@@ -6,8 +7,8 @@
 		font-size: 2rem;
 	}
 	&_h2 {
+		font-family: 'メイリオ', 'ヒラギノ丸ゴ ProN', serif;
 		font-size: 1.5rem;
-		font-family: 'メイリオ', 'ヒラギノ丸ゴ ProN';
 	}
 	&_h3 {
 		font-size: 1.25rem;

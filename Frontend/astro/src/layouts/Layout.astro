@@ -64,6 +64,7 @@ const publicDecsription = description + SITE_TD_END_TEMPLATE;
 			scroll-behavior: auto !important;
 		}
 	}
+
 	// for print
 	@media print {
 		*,
@@ -74,9 +75,9 @@ const publicDecsription = description + SITE_TD_END_TEMPLATE;
 	}
 
 	* {
+		min-inline-size: 0;
 		padding: 0;
 		margin: 0;
-		min-inline-size: 0;
 	}
 
 	// text and heading and link
@@ -101,20 +102,19 @@ const publicDecsription = description + SITE_TD_END_TEMPLATE;
 	a {
 		text-decoration-skip-ink: auto;
 		color: currentcolor;
-
 		&:link,
 		&:active {
-			color: currentColor;
+			color: currentcolor;
 		}
 	}
 
 	button,
 	[role='button'] {
 		appearance: none;
+		touch-action: manipulation;
 		cursor: pointer;
 		background: none;
 		border: none;
-		touch-action: manipulation;
 	}
 
 	summary {
@@ -205,24 +205,16 @@ const publicDecsription = description + SITE_TD_END_TEMPLATE;
 	body {
 		min-height: 100vh;
 		font-size: 16px;
+		word-break: auto-phrase;
 		overflow-wrap: break-word;
 		line-break: strict;
-		word-break: auto-phrase;
 		text-rendering: optimizespeed;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
 
 	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+		font-family: Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
 	}
 </style>
 
@@ -230,10 +222,10 @@ const publicDecsription = description + SITE_TD_END_TEMPLATE;
 <style is:global lang="scss">
 	/*! buildOutputFile: base */
 	body {
-		background-color: var(--foregroundColor);
-		color: #333;
+		display: flex;
 		font-family: var(--font-family);
 		font-size: 16px;
-		display: flex;
+		color: #333;
+		background-color: var(--foreground-color);
 	}
 </style>
