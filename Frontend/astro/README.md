@@ -35,7 +35,11 @@
 
 ## 完全静的（ビルド後に手で更新したり触れるくらい）にするには？
 
-## charset指定はとてもよしなにされる件
+## CSSのフォント設定がクォーテーション外れてしまう問題
+
+https://zenn.dev/toaru_fe/articles/485b1c3450bc57#1.-build.minify%E3%82%92false%E3%81%AB%E8%A8%AD%E5%AE%9A-1
+
+## CSSのcharset指定はとてもよしなにされる件
 
 charset指定が不要（コメントやfont指定などでも必要ない場合）の時に、自動で取ってくれるらしい
 rollupOptionで付与してもその後ろで消される
