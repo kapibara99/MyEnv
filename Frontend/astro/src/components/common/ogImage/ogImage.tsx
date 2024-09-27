@@ -1,6 +1,6 @@
+import { Buffer } from 'buffer';
 import satori from 'satori';
 import sharp from 'sharp';
-import { Buffer } from 'buffer';
 // if (!window.Buffer) window.Buffer = Buffer;
 
 export async function getOgImage(text: string) {
