@@ -1,7 +1,7 @@
-import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import purgecss from 'astro-purgecss'; // 使ってないstyleなどを削除する
 import compress from 'astro-compress'; // ファイル圧縮
+import purgecss from 'astro-purgecss'; // 使ってないstyleなどを削除する
+import { defineConfig } from 'astro/config';
 // postcss
 import autoprefixer from 'autoprefixer'; // 自動ベンダープレフィックス
 import cssnano from 'cssnano';
@@ -19,6 +19,7 @@ export default defineConfig({
 		// https://docs.astro.build/ja/reference/configuration-reference/
 		inlineStylesheets: 'never',
 		format: 'preserve',
+		assets: '_assets',
 	},
 	vite: {
 		css: {
@@ -70,8 +71,7 @@ export default defineConfig({
 						} else if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
 							extType = 'images';
 						}
-						const srcPath = `_assets/${extType}/${fileName}`;
-						return srcPath;
+						return `_assets/${extType}/${fileName}`;
 					},
 				},
 			},

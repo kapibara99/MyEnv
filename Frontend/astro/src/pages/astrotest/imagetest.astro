@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import testImage from '@/assets/image-test.jpg';
+import { Image, Picture } from 'astro:assets';
+---
+
+<Layout title="Image Test on Astro." description="description" canonical="/astrotest/">
+	<main>
+		<a href="./">return</a>
+		<h2>basic image</h2>
+		<Image alt="basicImage" src="https://placehold.jp/200x200.png" width={300} height={300} />
+		<h2>in src file import</h2>
+		<Image src={testImage} alt="test image" width={testImage.width / 3} />
+		<h2>&lt;Image /&gt; others options</h2>
+		<Image src={testImage} widths={[240, 540, 720, testImage.width]} quality="25" format="png" alt="説明文" />
+		<h2>use picture</h2>
+		<Picture src={testImage} formats={['avif', 'webp']} widths={[240, 540, 720, testImage.width]} alt="説明文" />
+	</main>
+</Layout>
