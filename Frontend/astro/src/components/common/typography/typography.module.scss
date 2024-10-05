@@ -3,11 +3,11 @@
 /*! buildOutputFile: components */
 
 .typography {
+	font-family: 'メイリオ', 'ヒラギノ丸ゴ ProN', serif;
 	&_h1 {
 		font-size: 2rem;
 	}
 	&_h2 {
-		font-family: 'メイリオ', 'ヒラギノ丸ゴ ProN', serif;
 		font-size: 1.5rem;
 	}
 	&_h3 {
@@ -15,5 +15,13 @@
 	}
 	&_h4 {
 		font-size: 1rem;
+	}
+	&_h5,
+	&_body {
+		font-size: 0.8rem;
+	}
+	&_lead {
+		font-size: 1rem;
+		font-weight: bold;
 	}
 }

@@ -22,6 +22,15 @@
       https://github.com/cssnano/cssnano/tree/master/packages/postcss-discard-comments
    3. aaa
 
+## jsx(tsx)と、astroの違い
+
+あーそうか、考えてみたらそうだわ
+React.ElementはJSありきで、stateはuseStateがないとダメなんだけど、
+astroはHTMLでデフォがstateを持ってくれるものなんだわ
+うわー、そういう感じか
+Stateを明示的に、設定しないといけないなんて、思い返せば、かなーりめんどくさいな
+radioボタンのためだけに、わざわざ、useStateして、memoにしてとか、だっる
+
 ## スタイリング戦略
 
 いろいろ考えた結果、以下とした。
