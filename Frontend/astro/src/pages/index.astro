@@ -1,12 +1,17 @@
 ---
-import Headings from '@/components/common/typography/typography.astro';
+import { RadioButton } from '@/components/common/form/radio/radio';
+import { BasicHeading1 } from '@/components/common/typography/typography';
 import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="Welcome to Astro." description="description" canonical="/index.html">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<Headings text="Hello index" />
+		<BasicHeading1 text="Hello index" />
+		<RadioButton label="zzzz" index={11} name="test2" checked={true} />;
+		<RadioButton label="zzzz" index={12} name="test2" checked={false} />;
+		<RadioButton label="zzzz" index={13} name="test2" checked={false} />;
+
 		<a href="./hoge/">link</a>
 		<a href="./astrotest/">astrotest</a>
 	</main>

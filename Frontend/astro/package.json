@@ -9,7 +9,7 @@
 		"afterBuild": "node scripts/newOrderCSSFiles.js && node scripts/removeCommentsInCSSFiles.js",
 		"format": "run-p format:*",
 		"format:eslint": "eslint --ext \"./**/*.ts\" \"./**/*.astro\" --fix",
-		"format:prettier": "prettier --write src/**/*.{astro,html,ts,tsx,scss} --config ./.prettierrc.json --cache",
+		"format:prettier": "prettier --write src/**/*.{astro,ts,tsx,scss} --config ./.prettierrc.json --cache",
 		"format:html": "markuplint \"src/**/*.{html,astro}\" --fix",
 		"format:style": "stylelint \"src/**/*.{css,scss,astro}\" --fix --cache",
 		"watch": "run-p watch:*",
