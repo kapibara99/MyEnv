@@ -43,6 +43,7 @@ export default defineConfig({
 				scss: {
 					// css変数を保管するためにインポートする
 					additionalData: `@use "src/styles/_variables.scss";`,
+					api: 'modern-compiler',
 				},
 			},
 		},
