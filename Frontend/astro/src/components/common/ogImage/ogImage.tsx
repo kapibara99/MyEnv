@@ -1,10 +1,12 @@
+import localFontPath from '@/assets/NotoSansJP-Bold.ttf';
 import { Buffer } from 'buffer';
+import fs from 'fs';
 import satori from 'satori';
 import sharp from 'sharp';
-// if (!window.Buffer) window.Buffer = Buffer;
 
 export async function getOgImage(text: string) {
-	const fontData = (await getFontData()) as ArrayBuffer;
+	const fontData = await getFontData();
+
 	const svg = await satori(
 		<main
 			style={{
@@ -42,7 +44,7 @@ export async function getOgImage(text: string) {
 	return await sharp(Buffer.from(svg)).png().toBuffer();
 }
 
-async function getFontData() {
+async function getFontData(): Promise<ArrayBuffer> {
 	const API = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700';
 
 	const css = await (
@@ -56,7 +58,12 @@ async function getFontData() {
 
 	const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/);
 
-	if (!resource) return;
+	if (!resource) {
+		// ローカルフォントファイルを読み込みたいが、パス置換がうまくいかないので、却下
+		const localFontData = fs.readFileSync(localFontPath);
+		const blob = new Blob([localFontData], { type: 'font/ttf' });
+		return await blob.arrayBuffer();
+	}
 
 	return await fetch(resource[1]).then(res => res.arrayBuffer());
 }

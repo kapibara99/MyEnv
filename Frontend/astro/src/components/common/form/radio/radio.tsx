@@ -8,7 +8,7 @@ type formArgTypes = {
 	checked?: boolean;
 };
 export const RadioButton = (props: formArgTypes) => {
-	const id = `test-radio-${props.index}`;
+	const id = `${props.name}-${props.index}`;
 	const [checked, setChecked] = useState(props.checked || false);
 	const onchange = () => {
 		setChecked(!checked);

@@ -1,0 +1,18 @@
+---
+import { RadioButton } from '@/components/common/form/radio/radio';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Form Test on Astro." description="description" canonical="/astrotest/">
+	<main>
+		<a href="./">return</a>
+		<h2>basic form</h2>
+		<RadioButton label="radio button" name="aaa" index={1} />
+		<RadioButton checked label="radio button" name="aaa" index={2} />
+		<RadioButton label="radio button" name="aaa" index={3} />
+		<br />
+		<RadioButton checked label="radio button" name="bbb" index={1} />
+		<RadioButton label="radio button" name="bbb" index={2} />
+		<RadioButton label="radio button" name="bbb" index={3} />
+	</main>
+</Layout>
