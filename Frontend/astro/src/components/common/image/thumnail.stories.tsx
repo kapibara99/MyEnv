@@ -1,4 +1,3 @@
-import testImage from '../../../assets/image-test.jpg';
 import { ThumbnailSample } from './basicImage';
 
 export default {
@@ -6,10 +5,9 @@ export default {
 	tags: ['autodocs'],
 	component: ThumbnailSample,
 	args: {
-		// src: 'https://placehold.jp/200x200.png',
-		src: testImage,
-		width: 250,
-		height: 167,
+		src: 'https://placehold.jp/800x300.png',
+		width: 8,
+		height: 3,
 		alt: 'image alt',
 	},
 };
