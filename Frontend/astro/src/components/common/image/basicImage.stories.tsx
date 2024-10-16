@@ -6,7 +6,6 @@ export default {
 	tags: ['autodocs'],
 	component: AstroBasicImage,
 	args: {
-		// src: 'https://placehold.jp/200x200.png',
 		src: testImage,
 		width: 250,
 		height: 167,

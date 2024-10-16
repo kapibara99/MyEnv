@@ -17,8 +17,8 @@
 		"watch:scss": "hcm src/**/*.module.scss --watch",
 		"watch:html": "onchange --initial -d 500 \"src/**/*.{html,astro}\" -- markuplint \"src/**/*.{html,astro}\"",
 		"watch:style": "onchange --initial -d 500 \"src/**/*.{css,scss,astro}\" -- stylelint \"src/**/*.{css,scss,astro}\" ",
-		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
+		"sb": "storybook dev -p 6006",
+		"sb:build": "storybook build"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.5.6",

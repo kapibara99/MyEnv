@@ -1,4 +1,3 @@
-import testImage from '../../../assets/image-test.jpg';
 import { BlurImage } from './basicImage';
 
 export default {
@@ -6,9 +5,9 @@ export default {
 	tags: ['autodocs'],
 	component: BlurImage,
 	args: {
-		src: testImage,
-		width: 0,
-		height: 0,
+		src: 'https://placehold.jp/800x300.png',
+		width: 8,
+		height: 3,
 		alt: 'image alt',
 	},
 };

@@ -23,4 +23,13 @@ export const BlurImage = (props: imageProps) => {
 };
 
 // thumbnail samples
-export const ThumbnailSample = (props: imageProps) => <img src={props.src as string} alt={props.alt} width={props.width} height={props.height} loading="lazy" decoding="async" />;
+export const ThumbnailSample = (props: imageProps) => {
+	return (
+		<div className={styles.imageThumbnail}>
+			<div className={styles.imageThumbnail__content}>
+				<h1>TITLE TITLE TITLE</h1>
+			</div>
+			<AstroBasicImage src={props.src as string} alt={props.alt} width={props.width} height={props.height} />
+		</div>
+	);
+};
