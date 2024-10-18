@@ -1,5 +1,5 @@
 @charset 'UTF-8';
-@use '@/styles/mixin';
+@use '../../..//styles/mixin';
 
 /*! buildOutputFile: components */
 
@@ -25,5 +25,34 @@
 	&_lead {
 		font-size: 1.8rem;
 		font-weight: bold;
+	}
+
+	&_uppercase {
+		text-transform: uppercase;
+	}
+	&_tightBox {
+		$font-size: 1.4rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, $font-size);
+		justify-content: center;
+		width: calc($font-size * 15);
+		margin: auto;
+		outline: 1px solid #000;
+		font-size: $font-size;
+		&__inner {
+			grid-column: 1 / -1;
+			> * {
+				line-break: anywhere;
+			}
+		}
+	}
+	&_centeringBox {
+		margin-inline: auto;
+		inline-size: fit-content;
+	}
+
+	&_countUpNum{
+		font-feature-settings: "tnam";
+		font-variant-numeric: tabular-nums;
 	}
 }
