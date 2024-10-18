@@ -2,6 +2,7 @@ import { BasicHeading1, BasicHeading2, BasicHeading3, BasicHeading4, BasicHeadin
 
 export default {
 	title: 'Components/Atoms/Typography',
+	component: BasicHeading1,
 	tags: ['autodocs'],
 	args: {
 		text: 'text test',

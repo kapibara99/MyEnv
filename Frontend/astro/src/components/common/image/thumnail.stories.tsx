@@ -13,9 +13,3 @@ export default {
 };
 
 export { ThumbnailSample };
-export const AutoSizeThumbnail = {
-	args: {
-		width: 0,
-		height: 0,
-	},
-};
