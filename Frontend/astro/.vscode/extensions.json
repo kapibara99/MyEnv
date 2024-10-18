@@ -1,4 +1,7 @@
 {
 	"recommendations": ["astro-build.astro-vscode"],
-	"unwantedRecommendations": []
+	"unwantedRecommendations": [],
+	"px-to-vw": {
+		"viewportWidth": "375px"
+	}
 }
