@@ -16,4 +16,12 @@ export default defineConfig({
 	publicDir: pathResolve('public'), // 静的アセット格納フォルダ
 
 	assetsInclude: ['**/*.woff'], // 静的アセットとして扱う追加パターンを指定
+
+	css: {
+		preprocessorOptions: {
+			scss: {
+				api: 'modern-compiler',
+			},
+		},
+	},
 });
