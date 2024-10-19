@@ -1,4 +1,5 @@
-import { useRef, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { LocalFontFamilies } from '../fontfamily/fontfamily';
 import {
 	BasicHeading1,
 	BasicHeading2,
@@ -95,7 +96,7 @@ const useAnimationFrame = (isRunning: boolean, callback = () => {}) => {
 			reqIdRef.current = requestAnimationFrame(loop);
 			callback();
 		} else {
-			reqIdRef.current = 0
+			reqIdRef.current = 0;
 			return () => cancelAnimationFrame(reqIdRef.current as number);
 		}
 		// isRunning も依存配列に追加
@@ -119,9 +120,31 @@ export const countUpNum = () => {
 	return (
 		<div>
 			<CountNum text={`現在のカウント: ${count} dayo!!`} />
-			<button onClick={()=>setIsRunning(true)}>開始</button>
-			<button onClick={()=>setIsRunning(false)}>停止</button>
-			<button onClick={()=>setCounter(0)}>初期化</button>
+			<button onClick={() => setIsRunning(true)}>開始</button>
+			<button onClick={() => setIsRunning(false)}>停止</button>
+			<button onClick={() => setCounter(0)}>初期化</button>
 		</div>
+	);
+};
+
+export const NotoFont = (args: typographyType) => {
+	return (
+		<>
+			<LocalFontFamilies />
+			<div style={{ fontFamily: 'Noto Sans JP' }}>
+				<BodyText text={args.text} />
+			</div>
+		</>
+	);
+};
+
+export const BIZUDGothicFont = (args: typographyType) => {
+	return (
+		<>
+			<LocalFontFamilies />
+			<div style={{ fontFamily: 'BIZ UDGothic' }}>
+				<BodyText text={args.text} />
+			</div>
+		</>
 	);
 };

@@ -156,7 +156,8 @@ body {
 	display: flex;
 	min-height: 100vh;
 	font-size: 1.6rem;
-	font-family: var(--font-family);
+	font-family: var(--font-family-gothic);
+	font-weight: 400;
 	color: #333;
 	background-color: var(--foreground-color);
 	word-break: auto-phrase;
