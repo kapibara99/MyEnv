@@ -14,7 +14,7 @@ export const BodyText = (props: typographyType) => <p className={styles.typograp
 export const LeadText = (props: typographyType) => <p className={styles.typography_lead}>{props.text}</p>;
 
 // count up
-export const CountNum = (props: typographyType) => <p className={(styles.typography_countUpNum,styles.typography_body)}>{props.text}</p>;
+export const CountNum = (props: typographyType) => <p className={(styles.typography_countUpNum, styles.typography_body)}>{props.text}</p>;
 
 // tight text box
 export const TightTextBox = (props: { children: ReactNode }) => {
