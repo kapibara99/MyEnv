@@ -1,0 +1,65 @@
+@use './variables';
+
+// basic dark mode setting
+@mixin basicFontColor() {
+	color: $basic-font-color;
+
+	@media (prefers-color-scheme: dark) {
+		color: $dark-font-color;
+	}
+}
+
+@mixin basicBgColor() {
+	background-color: $basic-bg-color;
+
+	@media (prefers-color-scheme: dark) {
+		background-color: $dark-bg-color;
+	}
+}
+
+// font size setting
+@mixin font($size: null, $height: null, $spacing: null, $weight: null) {
+	@if $size {
+		// font-size: $size;
+		font-size: calc($size / 16 * 1em);
+
+		@if $height {
+			line-height: calc($height / $size);
+		}
+	}
+
+	@if $spacing {
+		letter-spacing: calc($spacing / 1000 * 1em);
+	}
+
+	@if $weight {
+		font-weight: $weight;
+	}
+}
+
+// responsive break point and media query
+$breakpoints: (
+	'sp-mini': 'screen and (max-width: 350px)',
+	'sp': 'screen and (max-width: 639px)',
+	'sp-tab': 'screen and (max-width: 960px)',
+	'tablet': 'screen and (min-width: 640px) and (max-width: 960px)',
+	'tab-pc': 'screen and (min-width: 640px)',
+	'pc': 'screen and (min-width: 961px)',
+);
+
+@mixin mq($breakpoint: pc) {
+	@media #{map.get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+// no show case
+@mixin notShow() {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+// animation style media query
+// dark mode media query
+
+// print media query
