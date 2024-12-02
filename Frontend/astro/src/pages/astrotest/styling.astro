@@ -1,0 +1,46 @@
+---
+// like https://docs.astro.build/ja/guides/styling/
+
+import Layout from '@/layouts/Layout.astro';
+---
+
+<style>
+	/*  local css */
+	.p1 {
+		color: blue;
+	}
+
+	.p2 {
+		font-size: 12px;
+	}
+</style>
+<Layout title="Image Test on Astro." description="description" canonical="/astrotest/">
+	<main>
+		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<p class:list={['p1', 'p2']}>hogehoge</p>
+		<a href="/">to top</a>
+	</main>
+</Layout>
+
+<!-- <style lang="scss">
+	// 個別astroファイルでの<style>は別ファイルにビルドされる
+	// // @use '@/styles/variables' as *;
+	// // @use '@/styles/mixin' as *;
+	// // h1 {
+	// 	@include font(40, 40, null, 700);
+	// }
+</style> -->
+
+<style is:global>
+	/* global css は、ハッシュ値がつかない（古き良きCSSの書き方に近くなりそう） */
+	.text-gradient {
+		font-size: 40px;
+	}
+</style>
+
+<style is:inline>
+	/* inline css */
+	.text-gradient {
+		color: green;
+	}
+</style>

@@ -52,16 +52,23 @@ function initializeAccordion(accEl: HTMLDetailsElement) {
 	}
 
 	// add click event
-	const triggers = accEl.querySelectorAll('.js-accordion-trigger') as NodeListOf<HTMLButtonElement>;
-	triggers.forEach((trigger: HTMLButtonElement) => {
-		trigger.addEventListener('click', (e: MouseEvent) => {
-			e.preventDefault();
-			opened = !accEl.open;
-			initAccordionEvent(opened, accEl);
-		});
+	const triggers = accEl.querySelectorAll('.js-accordion-trigger');
+	triggers.forEach((trigger: Element) => {
+		if (trigger instanceof HTMLButtonElement) {
+			// HTMLButtonElementとして安全に扱える
+			trigger.addEventListener('click', (e: MouseEvent) => {
+				e.preventDefault();
+				opened = !accEl.open;
+				initAccordionEvent(opened, accEl);
+			});
+		} else {
+			alert('Accordion: trigger element is not HTMLButtonElement.');
+		}
 	});
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-	[].slice.call(document.querySelectorAll('.js-accordion')).forEach((el: HTMLDetailsElement) => { initializeAccordion(el); });
+	[].slice.call(document.querySelectorAll('.js-accordion')).forEach((el: HTMLDetailsElement) => {
+		initializeAccordion(el);
+	});
 });

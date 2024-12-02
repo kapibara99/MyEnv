@@ -1,0 +1,10 @@
+{
+  "name": "myenv",
+  "version": "1.0.0",
+  "description": "The development environment, which I personally use frequently, is put together. Front end, especially web production.",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.5.4"
+  }
+}
