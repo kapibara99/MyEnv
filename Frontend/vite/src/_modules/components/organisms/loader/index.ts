@@ -1,8 +1,13 @@
 import { listen } from '@/_global/functions/functions';
 
 export type LoaderStatus = 'LOADING' | 'DONE';
-listen('loader', (e: CustomEvent<{ loaderId: string; status: LoaderStatus }>) => {
-	const { loaderId, status } = e.detail;
+export interface LoaderProps {
+	loaderId: string;
+	status: LoaderStatus;
+}
+
+listen('loader', (e: CustomEvent<LoaderProps>) => {
+	const { status } = e.detail;
 	if (status === 'LOADING') {
 		// fixed background
 	} else {

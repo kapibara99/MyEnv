@@ -1,0 +1,14 @@
+---
+import { BasicHeading1 } from '@/components/common/typography/typography';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro." description="description" canonical="/index.html">
+	<main>
+		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<BasicHeading1 text="Hello index" />
+
+		<a href="./hoge/">link</a>
+		<a href="./astrotest/">astrotest</a>
+	</main>
+</Layout>

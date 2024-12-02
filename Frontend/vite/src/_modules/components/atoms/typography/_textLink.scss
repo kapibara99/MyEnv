@@ -8,13 +8,12 @@
 	&-c-a {
 		// ブロック名
 		&-textLink {
-			//
-			&.-underline{}
-			&.-add-icon{
+			// &.-underline{}
+			&.-add-icon {
 				display: flex;
 				align-items: center;
 			}
-			&__icon{
+			&__icon {
 				width: 1.2em;
 				height: 1.2em;
 				margin-right: 0.5em;
