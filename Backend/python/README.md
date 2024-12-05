@@ -14,6 +14,11 @@ txt ファイルからインストールを行う
 
 ## batch sample project
 
+## pytest sample
+`pytest -v --cov=main --cov-report=term-missing`
+
+`pytest -v --cov=main --cov-report=html`
+
 ## mariaDB
 
 ### env build (M1 Mac book air case)
