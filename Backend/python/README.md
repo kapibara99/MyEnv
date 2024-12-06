@@ -12,9 +12,14 @@ txt ファイルからインストールを行う
 
 ## scraping
 
+芸能人の出演予定を取得
+
+`python3 demo.py`
+
 ## batch sample project
 
 ## pytest sample
+
 `pytest -v --cov=main --cov-report=term-missing`
 
 `pytest -v --cov=main --cov-report=html`
