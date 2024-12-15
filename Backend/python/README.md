@@ -16,6 +16,12 @@ txt ファイルからインストールを行う
 
 `python3 demo.py`
 
+### Nuitka
+
+`nuitka --onefile --standalone --macos-create-app-bundle --output-dir=build demo.py`
+
+`build/demo.app/contents/MacOS/demo`
+
 ## batch sample project
 
 ## pytest sample
