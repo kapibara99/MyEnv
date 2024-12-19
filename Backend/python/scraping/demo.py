@@ -7,8 +7,6 @@ url = 'https://bangumi.org/talents/233800'
 """
 imports
 """
-import requests
-from requests.auth import HTTPDigestAuth
 from bs4 import BeautifulSoup
 import os
 import datetime
