@@ -1,8 +1,9 @@
 .local
 .env
+*.log
 
 __pycache__
-.coverage
+.coverage*
 .pytest_cache
 htmlcov
 

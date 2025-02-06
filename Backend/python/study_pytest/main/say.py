@@ -1,15 +1,14 @@
 class Foo:
+  def say(self) -> str:
+    return "foo"
 
-    def say(self):
-        return 'foo'
+  def say2(self) -> str:
+    return "foo2"
 
-    def say2(self):
-        return 'foo2'
 
 class Hoge:
+  def say(self) -> str:
+    return "hoge"
 
-    def say(self):
-        return 'hoge'
-
-    def say2(self):
-        return 'hoge2'
+  def say2(self) -> str:
+    return "hoge2"
