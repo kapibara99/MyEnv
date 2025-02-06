@@ -16,6 +16,7 @@ ignore = [
     "D203",  # one blank line before class
     "D213",  # multi-line summary second line
     "TD001", # invalid todo tag
+    "S608", # SQL 文章内の文字列変数導入をチェック
     "COM812", "ISC001", "ANN204", "T201", "PTH123", "ERA001", "I001", "ANN401", "BLE001", "G004", "PTH110", "PTH107", "PTH118", "D415", "D400", "DTZ005", "PTH103", "INP001","TRY400",
 ]
 unfixable = [
