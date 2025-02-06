@@ -1,5 +1,4 @@
 import os
-import sys
 import time
 import threading
 
@@ -110,11 +109,3 @@ def multi_sql_execute(data_list: list, do_something: Any, processes: int = 2) ->
 if __name__ == "__main__":
   cur = sql_execute("select * from learning.test;", log=False)
   print(cur)
-
-# ----------------------------------
-# TODO
-# ----------------------------------
-# make
-# setup db
-# start mysql ?
-# migrate table
