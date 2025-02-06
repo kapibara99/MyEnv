@@ -37,9 +37,11 @@ pip パッケージのリストを保存する
 
 ## pytest sample
 
-`pytest -v --cov=main --cov-report=term-missing`
+※実行可能ディレクトリは、python/でパッケージ化してます
 
-`pytest -v --cov=main --cov-report=html`
+`pytest -v --cov=. --cov-report=term-missing`
+
+`pytest -v --cov=. --cov-report=html`
 
 ## DB Connect (ex:mariaDB)
 

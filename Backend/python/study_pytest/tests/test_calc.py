@@ -1,4 +1,4 @@
-from main.calc import Calc
+from python.study_pytest.main.calc import Calc
 
 
 def test_add_01() -> None:
