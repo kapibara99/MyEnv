@@ -3,6 +3,8 @@ import sys
 
 sys.path.append("../common")
 import time
+import threading
+
 from multiprocessing import Pool
 from typing import Any
 
@@ -33,18 +35,48 @@ DB_DEFAULT_SETTING: DB_SET_TYPE = {
 # ----------------------------------
 # Functions
 # ----------------------------------
+def get_thread_id() -> int:
+  return threading.get_ident()
+
+db_max_retry = 3
+db_error_count = 0
 def setup_db_connection(db_setting: DB_SET_TYPE = DB_DEFAULT_SETTING) -> MySQLConnection:
   """db接続を新規で行う."""
+  global db_error_count
   try:
-    return db.connect(**db_setting)
+    conn = db.connect(**db_setting)
+    conn.thread_id = get_thread_id()
+    return conn
   except Exception as error:
-    logger.error(f"DB Connection Error. time sleep and try again... ERROR:{error}")
-    time.sleep(5)
+    db_error_count += 1
+    if db_error_count > db_max_retry:
+      raise
+    logger.error(f"DB Connection Error. time sleep and try again[{db_error_count}]... ERROR:{error}")
+    time.sleep(3)
     return setup_db_connection(db_setting)
 
 
-def get_thread_id() -> int:
-  return os.getpid()
+def sql_execute(sql:str,connection:MySQLConnection|None=None,dict_cur:bool=False,log:bool=True):
+  """SQLを実行する共通関数
+
+  ログ出力やConnectionも引数と関数内で管理する
+  """
+  if not connection:
+    connection = setup_db_connection()
+  cur = connection.cursor(dictionary=dict_cur)
+  if log:
+    logger.info(f"SQL実行:[{connection.thread_id}] SQL文 ...\n{sql}")
+    start = time.time()
+  try:
+    cur.execute(sql)
+  except Exception as error:
+    logger.error(f"SQL実行エラー:{error}")
+    raise
+  if log:
+    logger.info(f"SQL実行完了:[{connection.thread_id}] 実行時間:{time.time() - start}")
+  return cur.fetchall()
+
+
 
 
 def multi_sql_execute() -> None:
@@ -66,19 +98,12 @@ def do_something(x: Any) -> None:
 # ----------------------------------
 if __name__ == "__main__":
   # multi_sql_execute()
-  c = setup_db_connection()
-  cursor = c.cursor()
-  cursor.execute("select * from learning.test;")
-  for row in cursor.fetchall():
-    print(row)
-  cursor.close()
-  c.close()
-
+  cur = sql_execute("select * from learning.test;",dict_cur=True)
+  print(cur)
 
 # ----------------------------------
 # TODO
 # ----------------------------------
-# sql_execute new conn or current conn and logging and get objective cur
 # multi sql execute
 
 
