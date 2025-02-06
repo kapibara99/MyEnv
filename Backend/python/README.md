@@ -103,3 +103,7 @@ default-character-set=utf8mb4
 mac -> [Sequel Ace](https://apps.apple.com/us/app/sequel-ace/id1518036000)
 
 windows -> [A5M2](https://a5m2.mmatsubara.com/)
+
+## Create MakeFIle
+
+brew でインストール後、`export MAKEFILES=./MakeFile`で、カレントディレクトリのファイルを参照するように、設定しないと動かなかった
