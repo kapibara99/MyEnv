@@ -38,25 +38,28 @@ DB_DEFAULT_SETTING: DB_SET_TYPE = {
 def get_thread_id() -> int:
   return threading.get_ident()
 
-db_max_retry = 3
-db_error_count = 0
-def setup_db_connection(db_setting: DB_SET_TYPE = DB_DEFAULT_SETTING) -> MySQLConnection:
+
+def setup_db_connection(
+  db_setting: DB_SET_TYPE = DB_DEFAULT_SETTING, index: int = 0
+) -> MySQLConnection:
   """db接続を新規で行う."""
-  global db_error_count
+  db_max_retry = 3
   try:
     conn = db.connect(**db_setting)
     conn.thread_id = get_thread_id()
-    return conn
   except Exception as error:
-    db_error_count += 1
-    if db_error_count > db_max_retry:
+    index += 1
+    if index > db_max_retry:
       raise
-    logger.error(f"DB Connection Error. time sleep and try again[{db_error_count}]... ERROR:{error}")
+    logger.error(f"DB Connection Error. time sleep and try again[{index}]... ERROR:{error}")
     time.sleep(3)
-    return setup_db_connection(db_setting)
+    return setup_db_connection(db_setting, index)
+  return conn
 
 
-def sql_execute(sql:str,connection:MySQLConnection|None=None,dict_cur:bool=False,log:bool=True):
+def sql_execute(
+  sql: str, connection: MySQLConnection | None = None, dict_cur: bool = False, log: bool = True
+) -> None:
   """SQLを実行する共通関数
 
   ログ出力やConnectionも引数と関数内で管理する
@@ -75,8 +78,6 @@ def sql_execute(sql:str,connection:MySQLConnection|None=None,dict_cur:bool=False
   if log:
     logger.info(f"SQL実行完了:[{connection.thread_id}] 実行時間:{time.time() - start}")
   return cur.fetchall()
-
-
 
 
 def multi_sql_execute() -> None:
@@ -98,7 +99,7 @@ def do_something(x: Any) -> None:
 # ----------------------------------
 if __name__ == "__main__":
   # multi_sql_execute()
-  cur = sql_execute("select * from learning.test;",dict_cur=True)
+  cur = sql_execute("select * from learning.test;", dict_cur=True)
   print(cur)
 
 # ----------------------------------
