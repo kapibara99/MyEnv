@@ -1,0 +1,17 @@
+# Makefile
+
+clean:
+	rm -rf __pycache__
+	rm -rf .pytest_cache
+	rm -rf .coverage*
+	rm -rf htmlcov
+
+format:
+	ruff format .
+	ruff check --fix .
+
+test:
+	pytest -vvv --cov=. --cov-report=term-missing
+
+test-report:
+	pytest -v --cov=. --cov-report=html
