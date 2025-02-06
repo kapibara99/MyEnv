@@ -1,4 +1,4 @@
-from main.db import sql_execute, multi_sql_execute
+from python.db_test.main.db import sql_execute, multi_sql_execute
 
 
 def test_sql_execute() -> None:

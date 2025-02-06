@@ -1,17 +1,15 @@
 import os
 import sys
-
-sys.path.append("../common")
 import time
 import threading
 
+from dotenv import load_dotenv
 from multiprocessing import Pool
 from typing import Any
-
 import mysql.connector as db
-from dotenv import load_dotenv
-from log import initialize_logger
 from mysql.connector.connection import MySQLConnection
+
+from python.common.log import initialize_logger
 
 # ----------------------------------
 # 共通設定

@@ -1,4 +1,4 @@
-from main.say import Foo, Hoge
+from python.study_pytest.main.say import Foo, Hoge
 
 
 def test_foo_say() -> None:
