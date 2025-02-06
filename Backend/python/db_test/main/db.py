@@ -63,12 +63,21 @@ def sql_execute(
   """SQLを実行する共通関数
 
   ログ出力やConnectionも引数と関数内で管理する
+
+  sql:
+    実行するSQL文
+  dict_cur:
+    True: dict形式で返却する [{'id': 1, 'text': 'aaa'},...]
+    False: list形式で返却する [(1, 'aaa'),...]
+  log:
+    True: ログ出力する
+    False: ログ出力しない
   """
   if not connection:
     connection = setup_db_connection()
   cur = connection.cursor(dictionary=dict_cur)
   if log:
-    logger.info(f"SQL実行:[{connection.thread_id}] SQL文 ...\n{sql}")
+    logger.info(f"SQL実行:[{connection.thread_id}] SQL文 => {sql}")
     start = time.time()
   try:
     cur.execute(sql)
@@ -80,34 +89,33 @@ def sql_execute(
   return cur.fetchall()
 
 
-def multi_sql_execute() -> None:
-  """マルチプロセスとして処理中に、SQLへアクセスする."""
-  id_ary: [Any] = [0, 1, 2, 3, 4, 5, 6, 7]
-  p = Pool(processes=2)
-  result = p.map(do_something, id_ary)
+def multi_sql_execute(data_list: list, do_something: Any, processes: int = 2) -> None:
+  """マルチプロセスとして、SQLへアクセスする.
+
+  data_list:
+    並列実行されるデータ群
+  do_something:
+    実行する関数
+    data_listの各要素に対してdo_somethingを実行される
+  processes:
+    マルチプロセスの数
+  """
+  p = Pool(processes=processes)
+  result = p.map(do_something, data_list)
   p.close()
-  print(type(result), result, "".join(map(str, result)))
-
-
-def do_something(x: Any) -> None:
-  print(x)
-  return x
+  return result
 
 
 # ----------------------------------
 # main
 # ----------------------------------
 if __name__ == "__main__":
-  # multi_sql_execute()
-  cur = sql_execute("select * from learning.test;", dict_cur=True)
+  cur = sql_execute("select * from learning.test;", log=False)
   print(cur)
 
 # ----------------------------------
 # TODO
 # ----------------------------------
-# multi sql execute
-
-
 # make
 # setup db
 # start mysql ?
