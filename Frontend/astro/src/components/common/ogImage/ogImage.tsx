@@ -64,6 +64,5 @@ async function getFontData(): Promise<ArrayBuffer> {
 		const blob = new Blob([localFontData], { type: 'font/ttf' });
 		return await blob.arrayBuffer();
 	}
-
-	return await fetch(resource[1]).then(res => res.arrayBuffer());
+	return await fetch(resource[1] as string).then(res => res.arrayBuffer());
 }
