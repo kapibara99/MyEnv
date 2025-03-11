@@ -94,7 +94,7 @@ const useAnimationFrame = (isRunning: boolean, callback = () => {}) => {
 		if (isRunning) {
 			// isRunning が true の時だけループ
 			reqIdRef.current = requestAnimationFrame(loop);
-			callback();
+			return callback();
 		} else {
 			reqIdRef.current = 0;
 			return () => cancelAnimationFrame(reqIdRef.current as number);
