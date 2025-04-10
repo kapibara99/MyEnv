@@ -1,0 +1,40 @@
+{
+  // "include": ["./**/*"],
+  "exclude": ["dist", "node_modules"],
+  "compilerOptions": {
+    //   /* 基本コンパイラーオプション (Compiler Options) */
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // "noEmit": true,
+    "removeComments": true,
+    "target": "es2020",
+    "useDefineForClassFields": true,
+    /* モジュール解決オプション (Module Resolution Options) */
+    // "allowImportingTsExtensions": true,
+    // "paths": {
+    //  "@/*": ["src/*"],
+    //  "~/*": ["public/*"]
+    // },
+    /* 厳密な型チェックオプション (Strict Type Checking Options) */
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    // "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    /* ソースマップオプション (Source Map Options) */
+    /* プロジェクトオプション (Project Options) */
+    "composite": true,
+    "declaration": true,
+    "incremental": true,
+    "tsBuildInfoFile": ".tmp/.tsbuildinfo"
+    /* その他オプション (Other Options) */
+  }
+}
