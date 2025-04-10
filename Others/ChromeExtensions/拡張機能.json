@@ -1,0 +1,252 @@
+{
+    "Extensions": [
+        {
+            "incognito_enabled": false,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "ocbklpkcikpidkleacbohkobinlilgbd",
+            "version": "2.0.5",
+            "enabled": true
+},
+        {
+            "incognito_enabled": false,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "djgfpbegnihdgbngpmhjnlchgglngcdn",
+            "version": "5.3.10",
+            "enabled": true
+},
+        {
+            "incognito_enabled": false,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "lmhkpmbekcpmknklioeibfkpmmfibljd",
+            "version": "3.2.10",
+            "enabled": true
+},
+        {
+            "incognito_enabled": false,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "ohdllebchmmponnofchalfkegpjojcaf",
+            "version": "0.6.0.2",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "knheggckgoiihginacbkhaalnibhilkk",
+            "version": "0.2.8",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "hfbadkbkednhhimidcichmcmgeichgci",
+            "version": "2.0.0",
+            "enabled": true
+},
+        {
+            "incognito_enabled": false,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "cejckpjfigehbeecbbfhangbknpidcnh",
+            "version": "3.0.0",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "hdjihnnclpjhfdbbinmgoiehhoehhlgf",
+            "version": "1.8",
+            "enabled": true
+},
+        {
+            "incognito_enabled": false,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "idcacekakoknnpbfjcdhnkffgfbddnhk",
+            "version": "5.5.0",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "joadogiaiabhmggdifljlpkclnpfncmj",
+            "version": "0.3.0",
+            "enabled": true
+},
+        {
+            "incognito_enabled": false,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "fiegdmejfepffgpnejdinekhfieaogmj",
+            "version": "2.0.0",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "jjcjblcbnjhgjlnclhficglfjedhpjhl",
+            "version": "8.2",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "bhlhnicpbhignbdhedgjhgdocnmhomnp",
+            "version": "4.1",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "eljapbgkmlngdpckoiiibecpemleclhh",
+            "version": "7.1.4",
+            "enabled": true
+},
+        {
+            "incognito_enabled": false,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "dahenjhkoodjbpjheillcadbppiidmhp",
+            "version": "0.2.5",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "dkaagdgjmgdmbnecmcefdhjekcoceebi",
+            "version": "2.2.0.5",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "nlgphodeccebbcnkgmokeegopgpnjfkc",
+            "version": "6.1.1",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "fjbonpakihikkocmockbkndhooihpijo",
+            "version": "3.0.0",
+            "enabled": true
+},
+        {
+            "incognito_enabled": false,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "kcipcflegclplnkpbijedkhgljodgfcp",
+            "version": "1.0",
+            "enabled": true
+},
+        {
+            "incognito_enabled": false,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "picecooepnneofbeikgdaiebdlcenafn",
+            "version": "3.0.0",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "fmkadmapgofadopljbjfkapdkoienihi",
+            "version": "6.1.1",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "ckejmhbmlajgoklhgbapkiccekfoccmk",
+            "version": "4.5.1",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "kjiieeppkcjgdigogiafneikdhpagpbc",
+            "version": "2.0.1",
+            "enabled": true
+},
+        {
+            "incognito_enabled": true,
+            "remote_install": false,
+            "disable_reasons": 0,
+            "update_url": "https://clients2.google.com/service/update2/crx",
+            "id": "bcnpmhefiohkpmjacfoanhbjhikegmoe",
+            "version": "1.2.0",
+            "enabled": true
+}
+    ],
+    "Extension Settings": [
+        {
+            "extension_id": "ckejmhbmlajgoklhgbapkiccekfoccmk",
+            "value": "{\"behavior\":{\"activationCounter\":3},\"configuration\":{\"analytics\":{\"google\":true},\"background\":{\"active\":false,\"color\":\"#3a3b3e\",\"presenter_mode\":false},\"device\":{\"batterie_level\":100,\"cursor\":{\"default\":false},\"default\":\"apple-iphone-12-pro\",\"fullscreen\":false,\"header_footer\":{\"hide\":false},\"hide\":false,\"keyboard\":{\"hide\":false},\"orientation\":\"portrait\",\"scrollbar\":{\"show\":false}},\"style\":{\"mockup\":false},\"theme\":\"day\",\"video_quality\":\"medium\"},\"id\":\"uGqC83zKW90\",\"installDate\":{\"extension\":\"Sun Apr 09 2023 20:35:17 GMT+0900 (日本標準時)\",\"website\":\"Tue Dec 19 2023 09:49:48 GMT+0900 (Tokyo Daylight Time)\"},\"modales\":{\"new-iphone-14\":{\"date\":null},\"new-iphone-15\":{\"date\":null},\"review\":{\"date\":null}},\"notifications\":[{\"closed\":false,\"version\":\"4.1.0\"},{\"closed\":false,\"version\":\"4.1.2\"},{\"closed\":false,\"version\":\"4.2.0\"},{\"closed\":false,\"version\":\"4.2.2\"},{\"closed\":false,\"version\":\"4.4.0\"}],\"spentTime\":60,\"storeRefresh\":2}",
+            "key": "sync"
+},
+        {
+            "extension_id": "eljapbgkmlngdpckoiiibecpemleclhh",
+            "value": "{\"_persist\":\"{\\\"version\\\":-1,\\\"rehydrated\\\":true}\",\"auth\":\"null\",\"darkMode\":true,\"hideAppInstall\":false,\"hideFeedback\":false,\"iconIndex\":1,\"instaForce\":false,\"instaSeen\":false,\"launchCount\":9,\"ninjaMode\":false,\"sessionRand\":0.18502510140209516,\"theme\":\"auto\",\"tutoForce\":false,\"tutoSeen\":false,\"tutorialStep\":3,\"unreadBookmarks\":\"[]\"}",
+            "key": "persist:settings"
+},
+        {
+            "extension_id": "fjbonpakihikkocmockbkndhooihpijo",
+            "value": "true",
+            "key": "migrateStorageFlg"
+},
+        {
+            "extension_id": "fjbonpakihikkocmockbkndhooihpijo",
+            "value": "\"\"",
+            "key": "replaceStringPairs"
+},
+        {
+            "extension_id": "fjbonpakihikkocmockbkndhooihpijo",
+            "value": "false",
+            "key": "otherJSRender"
+},
+        {
+            "extension_id": "fjbonpakihikkocmockbkndhooihpijo",
+            "value": "\"\"",
+            "key": "domainPairs"
+}
+    ]
+}
