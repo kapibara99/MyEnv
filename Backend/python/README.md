@@ -10,9 +10,6 @@ current version 3.11
 txt ファイルからインストールを行う
 `$ pip install -r requirements.txt`
 
-pip パッケージのリストを保存する
-`pip list > requirements.txt`
-
 ### lint and format (ruff)
 
 フォーマット
