@@ -1,0 +1,17 @@
+{
+	"extends": ["../../../tsconfig.json"],
+	"include": ["src"],
+	"compilerOptions": {
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["./src/_modules/*"],
+			"~/*": ["./public/*"],
+			"#/*": ["./src/*"]
+		},
+		"types": ["vite/client", "node"],
+		"noEmit": true,
+		"module": "ESNext",
+		/* Bundler mode */
+		"skipLibCheck": true // *.d.ts のskip
+	}
+}
