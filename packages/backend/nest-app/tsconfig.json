@@ -1,5 +1,5 @@
 {
-  "extends": "../../../tsconfig.json",
+  "extends": "../../../tsconfig.base.json",
   "exclude": ["dist/**/*", "!dist/src/**/*"],
   "references": [{ "path": "../../../shared/types" }],
   "compilerOptions": {

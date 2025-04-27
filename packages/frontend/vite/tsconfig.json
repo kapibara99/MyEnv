@@ -1,5 +1,5 @@
 {
-	"extends": ["../../../tsconfig.json"],
+	"extends": ["../../../tsconfig.base.json"],
 	"include": ["src"],
 	"compilerOptions": {
 		"baseUrl": "./",
@@ -11,6 +11,9 @@
 		"types": ["vite/client", "node"],
 		"noEmit": true,
 		"module": "ESNext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
 		/* Bundler mode */
 		"skipLibCheck": true // *.d.ts のskip
 	}

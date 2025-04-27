@@ -2,7 +2,7 @@
 
 import sampleJSON from './json/sample.json';
 
-class Tournament {
+export class Tournament {
 	root: HTMLElement;
 	json: unknown;
 	constructor(root: HTMLElement, json: Object = sampleJSON) {
@@ -17,7 +17,7 @@ class Tournament {
 		}
 	}
 
-	showTournamentList() {
-		const targetCanvas = this.root.querySelector('canvas');
-	}
+	// showTournamentList() {
+	// 	const targetCanvas = this.root.querySelector('canvas');
+	// }
 }
