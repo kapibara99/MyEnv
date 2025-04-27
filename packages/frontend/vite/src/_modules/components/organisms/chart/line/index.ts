@@ -2,6 +2,7 @@ import lineData from './line.json';
 import { initializeChart } from '../chart.shared';
 import { HTMLLegendClassNames, initializeHTMLLegend } from '../chart.lib.legend';
 import { activatedTooltipOptions } from '../chart.lib.tooltip';
+import { type LegendItem } from 'chart.js';
 
 function initializeOptions(el: HTMLElement) {
 	return {
@@ -46,7 +47,7 @@ export function initializeLineChart(target: HTMLCanvasElement) {
 		chart = initializeChart(chartEl, options);
 
 		if (hiddenIndexAry.length > 0) {
-			hiddenIndexAry.forEach(v => {
+			hiddenIndexAry.forEach((v: LegendItem) => {
 				const el = (target.parentElement?.querySelector(`.${HTMLLegendClassNames.button}:nth-of-type(${v.datasetIndex !== undefined ? v.datasetIndex + 1 : 1})`) as HTMLButtonElement) ?? null;
 				if (el !== null) el.click();
 			});

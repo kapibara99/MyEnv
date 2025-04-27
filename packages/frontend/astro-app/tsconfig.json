@@ -1,5 +1,5 @@
 {
-	"extends": ["../../../tsconfig.json", "astro/tsconfigs/strict"],
+	"extends": ["../../../tsconfig.base.json", "astro/tsconfigs/strict"],
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
