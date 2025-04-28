@@ -1,10 +1,16 @@
 {
-  "name": "myenv",
-  "version": "1.0.0",
-  "description": "The development environment, which I personally use frequently, is put together. Front end, especially web production.",
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "typescript": "^5.5.4"
-  }
+	"name": "myenv",
+	"version": "1.0.0",
+	"description": "The development environment, which I personally use frequently, is put together. Front end, especially web production.",
+	"author": "",
+	"license": "ISC",
+	"scripts": {
+		"prettier": "prettier --write . --config ./.prettierrc.json"
+	},
+	"dependencies": {
+		"typescript": "^5.5.4"
+	},
+	"devDependencies": {
+		"prettier": "^3.5.3"
+	}
 }

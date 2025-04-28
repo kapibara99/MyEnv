@@ -41,7 +41,7 @@ export function initializeLineChart(target: HTMLCanvasElement) {
 
 	window.addEventListener('resize', () => {
 		if (chart === undefined) return;
-		let hiddenIndexAry = chart.legend !== undefined ? Object.assign({}, chart).legend?.legendItems?.filter(v => v.hidden) ?? [] : [];
+		let hiddenIndexAry = chart.legend !== undefined ? (Object.assign({}, chart).legend?.legendItems?.filter(v => v.hidden) ?? []) : [];
 		chart.destroy();
 		const options = initializeOptions(target);
 		chart = initializeChart(chartEl, options);

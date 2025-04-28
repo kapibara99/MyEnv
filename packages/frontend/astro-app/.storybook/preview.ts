@@ -1,5 +1,5 @@
-import type { Preview } from '@storybook/react'
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+import type { Preview } from '@storybook/react';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const preview: Preview = {
 	parameters: {
@@ -13,6 +13,6 @@ const preview: Preview = {
 			viewports: INITIAL_VIEWPORTS,
 		},
 	},
-}
+};
 
-export default preview
+export default preview;
