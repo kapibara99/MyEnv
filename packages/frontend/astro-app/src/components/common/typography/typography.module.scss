@@ -1,0 +1,58 @@
+@charset 'UTF-8';
+@use '../../..//styles/mixin';
+
+/*! buildOutputFile: components */
+
+.typography {
+	&_h1 {
+		@include mixin.font(40, 40, null, 700);
+	}
+	&_h2 {
+		font-size: 2rem;
+	}
+	&_h3 {
+		font-size: 1.8rem;
+	}
+	&_h4 {
+		font-size: 1.5rem;
+	}
+	&_h5,
+	&_body {
+		// clampを使用する場合は(最小値,((Min Font Size) / (Min Width Size) * 100)vw,最大値)でレスポンシブ可変
+		// px-to-vwで設定すると楽ちん
+		font-size: clamp(14px, 3.733vw, 24px);
+	}
+	&_lead {
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
+
+	&_uppercase {
+		text-transform: uppercase;
+	}
+	&_tightBox {
+		$font-size: 1.4rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, $font-size);
+		justify-content: center;
+		width: calc($font-size * 15);
+		margin: auto;
+		outline: 1px solid #000;
+		font-size: $font-size;
+		&__inner {
+			grid-column: 1 / -1;
+			> * {
+				line-break: anywhere;
+			}
+		}
+	}
+	&_centeringBox {
+		margin-inline: auto;
+		inline-size: fit-content;
+	}
+
+	&_countUpNum {
+		font-feature-settings: 'tnam';
+		font-variant-numeric: tabular-nums;
+	}
+}

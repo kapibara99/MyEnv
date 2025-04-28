@@ -1,0 +1,15 @@
+{
+	"extends": "../../tsconfig.base.json", // 親の設定を継承
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"], // コンパイル対象から除外するフォルダ
+	"compilerOptions": {
+		"module": "nodenext",
+		"noEmit": false,
+		// "emitDeclarationOnly": true,
+		"declaration": true,
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"composite": true,
+		"tsBuildInfoFile": "./dist/.tsbuildinfo" // ビルド情報ファイルの場所を変更
+	}
+}

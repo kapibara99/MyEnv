@@ -41,8 +41,8 @@ coverage
 
 # temp directory
 .temp
-.tmp
-.local
+*.tmp
+*.local
 .backup
 *result*
 
@@ -54,3 +54,8 @@ pids
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# local ignore
+*storybook.log
+storybook-static
+others/
