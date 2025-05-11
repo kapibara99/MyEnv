@@ -1,5 +1,5 @@
-@use '@/_global/variables/variables';
-@use '@/_global/functions/mixins';
+// @use '@/_global/variables/variables';
+// @use '@/_global/functions/mixins';
 
 // 接頭辞 共通
 .a {
@@ -12,25 +12,25 @@
 				width: 100%;
 				margin: auto;
 
-				@include mixins.mq {
-					position: relative;
-					display: flex;
-					align-items: flex-start;
-					max-width: 1300px;
-				}
+				// @include mixins.mq {
+				// 	position: relative;
+				// 	display: flex;
+				// 	align-items: flex-start;
+				// 	max-width: 1300px;
+				// }
 			}
 			&-content {
 				width: 100%;
 
-				@include mixins.mq {
-					width: 70%;
-					max-width: 960px;
-				}
+				// @include mixins.mq {
+				// 	width: 70%;
+				// 	max-width: 960px;
+				// }
 			}
 
-			@include mixins.mq('sp-tab') {
-				@include mixins.notShow;
-			}
+			// @include mixins.mq('sp-tab') {
+			// 	@include mixins.notShow;
+			// }
 
 			position: sticky;
 			padding: 40px;
