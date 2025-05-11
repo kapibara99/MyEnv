@@ -19,3 +19,5 @@ export function createChartStyleValue(style: ChartStyle): string {
 		.map(([, value]) => value)
 		.join(' ') as string;
 }
+
+export const defaultWidthSize = 'max-w-[1200px] w-4/5 mx-auto';
