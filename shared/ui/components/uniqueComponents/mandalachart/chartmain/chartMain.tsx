@@ -5,7 +5,7 @@ import type { MandalaCellProps } from '../chart';
 import { DEFAULT_CHART_DATA, CHART_MAIN_ID, STORAGE_KEY } from '../chart.functions';
 import useLocalStorage from '../usestorage/useStorage';
 import MandalaCell from '../chartcell/chartcell';
-import ChartStyleDefault from '../chartStyleDefault/chartStyleDefault';
+import ChartStyleDefault from './chartStyleDefault';
 
 export default function ChartMain() {
 	const [cellSize] = useAtom(chartCellSizeAtom);
