@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+@theme {
+	/* color pallet */
+	--color-base-color: #f5f5f5;
+	--color-base-font-color: #444444;
+	--color-base-strong: #222222;
+	--color-base-line: #777777;
+	--color-main: #1e90ff;
+	--color-main-strong: #00008b;
+	--color-main-light: #87cefa;
+	--color-attention: #ff8d1e;
+	--color-attention-strong: #ff8d1e;
+	--color-attention-light: #ff8d1e;
+
+	/* fonts */
+	--font-main: 'Noto Sans JP', sans-serif;
+
+	/* animation */
+	--animate-back-circle: gradient-animation 9s linear infinite;
+	@keyframes gradient-animation {
+		0% {
+			transform: scale(0); /* アニメーション開始時のサイズ */
+			opacity: 0;
+		}
+		10% {
+			opacity: 1;
+		}
+		100% {
+			transform: scale(2); /* アニメーション終了時のサイズ */
+		}
+	}
+}
+@utility animation-delay-* {
+	animation-delay: --value([ *]);
+	animation-delay: calc(--value(integer) * 1ms);
+}

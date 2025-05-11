@@ -9,9 +9,11 @@
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
+		"@tailwindcss/vite": "^4.1.6",
 		"jotai": "^2.12.4",
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"react-dom": "^19.0.0",
+		"tailwindcss": "^4.1.6"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^3.2.6",
