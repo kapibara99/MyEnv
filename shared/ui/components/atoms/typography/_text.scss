@@ -1,5 +1,5 @@
-@use '@/_global/variables/variables';
-@use '@/_global/functions/mixins';
+// @use '@/_global/variables/variables';
+// @use '@/_global/functions/mixins';
 
 // 接頭辞 共通
 .a {
@@ -12,22 +12,22 @@
 			font-weight: 400;
 			line-height: 1.5;
 
-			@include mixins.mq {
-				font-size: 16px;
-			}
+			// @include mixins.mq {
+			// 	font-size: 16px;
+			// }
 			&.-lead {
 				font-size: 18px;
 
-				@include mixins.mq {
-					font-size: 20px;
-				}
+				// @include mixins.mq {
+				// 	font-size: 20px;
+				// }
 			}
 			&.-caption {
 				font-size: 10px;
 
-				@include mixins.mq {
-					font-size: 12px;
-				}
+				// @include mixins.mq {
+				// 	font-size: 12px;
+				// }
 			}
 			&.-overline {
 				font-size: 10px;
