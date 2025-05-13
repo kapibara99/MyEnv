@@ -10,7 +10,6 @@ import ChartStyleDefault from './chartStyleDefault';
 export default function ChartMain() {
 	const [cellSize] = useAtom(chartCellSizeAtom);
 	const { storedValue } = useLocalStorage(STORAGE_KEY, DEFAULT_CHART_DATA());
-	console.log('storedValue', storedValue);
 
 	return (
 		<ChartStyleDefault>

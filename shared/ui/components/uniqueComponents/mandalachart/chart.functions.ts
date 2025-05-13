@@ -148,8 +148,5 @@ export const getSameValueZahyou = (inputZahyou: CellZahyou): CellZahyou => {
 		case 8:
 			break;
 	}
-	// if (result[0] === 0 || result[1] === 0) {
-	//   console.log("error", result, inputZahyou);
-	// }
 	return result;
 };

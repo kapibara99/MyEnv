@@ -14,7 +14,7 @@ export default function useLocalStorage(
 			const item = localStorage.getItem(key);
 			return item ? (JSON.parse(item) as MandalaCellProps[]) : initialValue;
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 			return initialValue;
 		}
 	});
@@ -26,15 +26,13 @@ export default function useLocalStorage(
 			const serializedValue = JSON.stringify(storedValue);
 			localStorage.setItem(key, serializedValue);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	}, [key, storedValue]);
 
 	const localSetter = (inputValue: string, zahyou: CellZahyou) => {
 		const current = storedValue?.slice();
 		if (!current) return;
-		// console.log("localSetter", inputValue, zahyou, current);
-
 		const index = zahyou[0] * 9 + zahyou[1];
 		current[index].value = inputValue;
 		setStoredValue(current);
