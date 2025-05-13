@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 
 export default function AdmaxContent({ admaxID }: { admaxID: string }) {
 	const [dev] = useState(import.meta.env.DEV);
-	console.log('admaxID',admaxID,dev);
-
 	useEffect(() => {
 		if (dev) return;
 		const script = document.createElement('script');
@@ -16,7 +14,6 @@ export default function AdmaxContent({ admaxID }: { admaxID: string }) {
 			document.body.removeChild(script);
 		};
 	}, [admaxID, dev]);
-
 	return (
 		<>
 			<div className="mt-8 flex justify-center">

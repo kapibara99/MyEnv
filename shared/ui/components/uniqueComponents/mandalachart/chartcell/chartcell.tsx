@@ -102,10 +102,6 @@ export default function MandalaCell({ cellType, value, isFocused, zahyou }: Mand
 				tabIndex={-1}
 				type="button"
 				onClick={e => handleClick(e)}
-				// onTouchEnd={e => {
-				// 	console.log('touch');
-				// 	handleClick(e);
-				// }}
 			/>
 			{/* 表示するvalue */}
 			<span className="block w-full whitespace-pre-line">{cellValue}</span>
