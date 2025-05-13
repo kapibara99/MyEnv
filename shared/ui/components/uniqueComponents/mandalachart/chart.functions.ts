@@ -51,8 +51,6 @@ const CHART_COLOR_MAP = {
  * 座標配列を受け取り、カテゴリごとの、 border-color を返す
  */
 export function getCategoryColorFromZahyou(zahyou: CellZahyou) {
-	console.log('zahyou.toString()', zahyou.toString());
-
 	return CHART_COLOR_MAP[zahyou.toString() as keyof typeof CHART_COLOR_MAP] || CHART_COLORS[4];
 }
 
