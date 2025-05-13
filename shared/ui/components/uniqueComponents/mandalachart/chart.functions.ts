@@ -28,32 +28,32 @@ export const CHART_COLORS = [
 	'border-[#312c85]',
 ];
 
+const CHART_COLOR_MAP = {
+	'1,1': CHART_COLORS[0],
+	'3,3': CHART_COLORS[0],
+	'1,4': CHART_COLORS[1],
+	'3,4': CHART_COLORS[1],
+	'1,7': CHART_COLORS[2],
+	'3,5': CHART_COLORS[2],
+	'4,1': CHART_COLORS[3],
+	'4,3': CHART_COLORS[3],
+	'4,5': CHART_COLORS[5],
+	'4,7': CHART_COLORS[5],
+	'5,3': CHART_COLORS[6],
+	'7,1': CHART_COLORS[6],
+	'5,4': CHART_COLORS[7],
+	'7,4': CHART_COLORS[7],
+	'5,5': CHART_COLORS[8],
+	'7,7': CHART_COLORS[8],
+};
 /**
  * @module getCategoryColorFromZahyou
  * 座標配列を受け取り、カテゴリごとの、 border-color を返す
  */
 export function getCategoryColorFromZahyou(zahyou: CellZahyou) {
-	function checker(z: number, val: number) {
-		return z == val;
-	}
-	if ((checker(zahyou[0], 1) && zahyou[1] === 1) || (checker(zahyou[0], 3) && zahyou[1] === 3)) {
-		return CHART_COLORS[0];
-	} else if ((checker(zahyou[0], 1) && zahyou[1] === 4) || (checker(zahyou[0], 3) && zahyou[1] === 4)) {
-		return CHART_COLORS[1];
-	} else if ((checker(zahyou[0], 1) && zahyou[1] === 7) || (checker(zahyou[0], 3) && zahyou[1] === 5)) {
-		return CHART_COLORS[2];
-	} else if ((checker(zahyou[0], 4) && zahyou[1] === 1) || (checker(zahyou[0], 4) && zahyou[1] === 3)) {
-		return CHART_COLORS[3];
-	} else if ((checker(zahyou[0], 4) && zahyou[1] === 5) || (checker(zahyou[0], 4) && zahyou[1] === 7)) {
-		return CHART_COLORS[5];
-	} else if ((checker(zahyou[0], 5) && zahyou[1] === 3) || (checker(zahyou[0], 7) && zahyou[1] === 1)) {
-		return CHART_COLORS[6];
-	} else if ((checker(zahyou[0], 5) && zahyou[1] === 4) || (checker(zahyou[0], 7) && zahyou[1] === 4)) {
-		return CHART_COLORS[7];
-	} else if ((checker(zahyou[0], 5) && zahyou[1] === 5) || (checker(zahyou[0], 7) && zahyou[1] === 7)) {
-		return CHART_COLORS[8];
-	}
-	return CHART_COLORS[4];
+	console.log('zahyou.toString()', zahyou.toString());
+
+	return CHART_COLOR_MAP[zahyou.toString() as keyof typeof CHART_COLOR_MAP] || CHART_COLORS[4];
 }
 
 /**
