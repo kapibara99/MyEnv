@@ -92,7 +92,7 @@ export default function PrivacyPolicy() {
 				<p className="mb-2">開発者が別途定める場合を除いて、変更後のプライバシーポリシーは、本ウェブサイトに掲載したときから効力を生じるものとします。</p>
 				<h3 className="font-bold mt-10 mb-2">第10条（お問い合わせ窓口）</h3>
 				本ポリシーに関するお問い合わせは、
-				<a className="text-blue-500 hover:underline" href="" target="_blank" rel="noopener">
+				<a className="text-blue-500 hover:underline" href="#" target="_blank" rel="noopener">
 					お問い合わせフォーム
 				</a>
 				よりお願いいたします。
