@@ -1,0 +1,22 @@
+{
+	"printWidth": 200,
+	"tabWidth": 2,
+	"useTabs": true,
+	"singleQuote": true,
+	"jsxSingleQuote": false,
+	"singleAttributePerLine": false,
+	"semi": true,
+	"trailingComma": "all",
+	"bracketSpacing": true,
+	"bracketSameLine": true,
+	"arrowParens": "avoid",
+	"endOfLine": "auto",
+	"overrides": [
+		{
+			"files": "*.svg",
+			"options": {
+				"parser": "html"
+			}
+		}
+	]
+}
