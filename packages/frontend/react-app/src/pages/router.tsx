@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { NavLink, Route, Routes, useLocation } from 'react-router';
+import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import ContentBox from '../components/_common/contentBox';
 import Kiyaku from './kiyaku';
 import PrivacyPolicy from './privacy';
