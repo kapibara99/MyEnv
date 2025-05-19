@@ -76,7 +76,7 @@ export default function Kiyaku() {
 				<p className="mb-2">本規約の解釈にあたっては、日本法を準拠法とします。</p>
 				<p className="mb-2">本サービスに関して紛争が生じた場合には、開発者の本店所在地を管轄する裁判所を専属的合意管轄とします。</p>
 
-				<h3 className="font-bold mt-10 mb-2">第8条（個人情報の取扱い）</h3>
+				<h3 className="font-bold mt-10 mb-2">第9条（個人情報の取扱い）</h3>
 				<p className="mb-2">
 					開発者は、本サービスの利用によって取得する個人情報については、開発者「
 					<NavLink className="text-blue-500 hover:underline" to="/privacy" end>
