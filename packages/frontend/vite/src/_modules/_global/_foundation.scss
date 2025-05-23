@@ -128,12 +128,3 @@ meter {
 [hidden] {
 	display: none;
 }
-
-// for print
-@media print {
-	*,
-	*::before,
-	*::after {
-		color-adjust: exact;
-	}
-}
