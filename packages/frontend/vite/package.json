@@ -10,7 +10,7 @@
 		"watch": "run-p watch:*",
 		"lint": "run-s lint:*",
 		"format": "run-s format:*",
-		"prettier": "prettier --write \"src/**/*.{html,css,scss,js,ts,md,json}\" --config ./.prettierrc.json",
+		"prettier": "prettier --write \"src/**/*.{html,css,scss,js,ts,md,json}\"",
 		"printESLint": "eslint --print-config ./vite.config.ts > ./eslint-setting.json",
 		"↓ integration command": "",
 		"build:typeScrypt": "tsc",
