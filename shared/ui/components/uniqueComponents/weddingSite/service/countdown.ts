@@ -6,7 +6,7 @@ dayjs.extend(timezone);
 
 export function getCountdownInfo() {
 	// date countdown
-	const targetDate = '2025/09/27 00:00:00';
+	const targetDate = '2025/01/01 00:00:00';
 	const target = dayjs.tz(targetDate, 'Asia/Tokyo');
 	const now = dayjs().tz('Asia/Tokyo');
 	// diff

@@ -14,7 +14,7 @@ export default function Header() {
 		<>
 			<header className="p-4">
 				<h1 className="font-bold">
-					<NavLink to="/">2025/9/27.28 Wedding Ceremony</NavLink>
+					<NavLink to="/">yyyy/mm/dd.dd Wedding Ceremony</NavLink>
 				</h1>
 			</header>
 			<div className="mt-2 overflow-x-scroll">
