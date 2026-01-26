@@ -1,38 +1,18 @@
 import type { MouseEvent } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import useScrollTrigger from '../service/useScrollTrigger';
-import jsonData from './data.json';
-import { ImageModal } from './modal';
-import type { ImageContent } from './types';
+import DisplayFullSizeLoading from '../_common/loading';
+import { ImageContentElement } from './imageContent';
+import { preloadAndFetchData } from './imagePreLoader';
+import { wrapPromise } from './imageSuspenseWrapper';
 
-const data = jsonData as Array<ImageContent>;
 const toggleOwnerList = new Set(['ALL', 'groom', 'bride']);
-const tagList = new Set([...Array.from(toggleOwnerList), ...data.map(obj => [...obj.tags]).flatMap(tagArray => tagArray)]);
 
-function ImageContentElement(props: ImageContent) {
-	const [open, setOpen] = useState(false);
-	const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-		e.preventDefault();
-		const toOpen = !open;
-		if (toOpen) {
-			document.body.classList.add('show-modal');
-		} else {
-			document.body.classList.remove('show-modal');
-		}
-		setOpen(toOpen);
-	};
-	return (
-		<div>
-			<div className="w-full text-center">
-				<button type="button" onClick={e => handleClick(e)}>
-					<img src={props.path} alt={props.name} loading="lazy" />
-				</button>
-			</div>
-			<ImageModal closer={setOpen} props={props} isOpen={open} />
-		</div>
-	);
-}
-export default function ImageAlbum() {
+const imageResource = wrapPromise(preloadAndFetchData('/components/uniqueComponents/weddingSite/album/data.json'));
+
+const ImageAlbumContents = () => {
+	const data = imageResource.read();
+	const tagList = new Set([...toggleOwnerList, ...data.flatMap(obj => obj.tags)]);
 	const [imageData, setImageData] = useState(data);
 	const [currentActiveTag, setCurrentActiveTag] = useState('ALL');
 	const handleTagClick = (e: MouseEvent<HTMLButtonElement>) => {
@@ -105,5 +85,13 @@ export default function ImageAlbum() {
 				<p className="font-bold">該当する画像がありません。</p>
 			)}
 		</div>
+	);
+};
+
+export default function ImageAlbum() {
+	return (
+		<Suspense fallback={<DisplayFullSizeLoading />}>
+			<ImageAlbumContents />
+		</Suspense>
 	);
 }

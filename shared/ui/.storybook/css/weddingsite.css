@@ -2,9 +2,11 @@
 
 body.show-modal {
 	overflow: hidden;
-	height: 100vh;
 }
-
+body.height-fixed {
+	max-height: 100dvh;
+	overflow-y: hidden;
+}
 /*
 ========================================
 unique class (from wedding site)
@@ -101,6 +103,7 @@ unique class (from wedding site)
 	width: 100%;
 	height: 100%;
 }
+
 /* animations */
 /* from react-cool-inview */
 .unique-home-bg {
@@ -121,5 +124,31 @@ unique class (from wedding site)
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+.unique-vertical-animate-title {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	line-break: normal;
+	letter-spacing: 0.2em;
+}
+
+.unique-fuwatto-animation {
+	opacity: 0;
+	animation: fuwattoAnim 1.5s ease-out forwards;
+}
+
+/* --- ふわっと現れるアニメーション --- */
+@keyframes fuwattoAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(-0.8em);
+		filter: blur(4px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0);
 	}
 }
