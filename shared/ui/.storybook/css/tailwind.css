@@ -15,6 +15,10 @@
 
 	/* fonts */
 	--font-main: 'Noto Sans JP', sans-serif;
+	--font-main-family: 'Times New Roman', 'YuMincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'MS PMincho', serif;
+	--font-primary-europa: 'Dancing Script', 'YuMincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'MS PMincho', serif;
+	/* gradation */
+	--base-bg-gradient: 90deg, rgba(237, 250, 240, 1), rgba(240, 237, 250, 1) 67%, rgba(227, 250, 150, 1);
 
 	/* animation */
 	--animate-back-circle: gradient-animation 9s linear infinite;

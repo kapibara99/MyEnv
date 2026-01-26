@@ -19,13 +19,13 @@ export default function MandalaCell({ cellType, value, isFocused, zahyou }: Mand
 		if (value !== cellValue) {
 			setCellValue(value);
 		}
-	}, [value]);
+	}, [cellValue, value]);
 	const [cellFocused, setCellFocused] = useState(isFocused);
 	useEffect(() => {
 		if (isFocused !== cellFocused) {
 			setCellFocused(isFocused);
 		}
-	}, [isFocused]);
+	}, [cellFocused, isFocused]);
 
 	useEffect(() => {
 		if (inputRef.current) addChartCellSynchronizeEvent(cellType, zahyou, setCellValue);
