@@ -9,7 +9,7 @@ const UseLocalStorageDemo: React.FC<{
 	storageKey: string;
 	initialDemoValue?: MandalaCellProps[];
 }> = ({ storageKey, initialDemoValue }) => {
-	const { storedValue, setStoredValue, localSetter } = initialDemoValue ? useLocalStorage(storageKey, initialDemoValue) : useLocalStorage(storageKey);
+	const { storedValue, setStoredValue, localSetter } = useLocalStorage(storageKey, initialDemoValue);
 
 	const [inputValue, setInputValue] = useState<string>('');
 	const [zahyouRow, setZahyouRow] = useState<number>(0);

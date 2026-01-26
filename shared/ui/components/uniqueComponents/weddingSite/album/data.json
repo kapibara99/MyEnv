@@ -1,0 +1,42 @@
+[
+	{
+		"name": "新郎の小さいころ①",
+		"path": "https://placehold.jp/100x50.png",
+		"description": "どこかの旅行で兄（左）と新郎（右）のツーショット。",
+		"imageDate": "2000年?",
+		"owner": "groom",
+		"tags": ["幼少期-新郎"]
+	},
+	{
+		"name": "新郎の小さいころ②",
+		"path": "https://placehold.jp/100x50.png",
+		"description": "8歳の誕生日",
+		"imageDate": "2006年01月",
+		"owner": "groom",
+		"tags": ["幼少期-新郎"]
+	},
+	{
+		"name": "新郎の小さいころ③",
+		"path": "https://placehold.jp/100x50.png",
+		"description": "おばあちゃんの家の庭にて",
+		"imageDate": "2004年12月",
+		"owner": "groom",
+		"tags": ["幼少期-新郎"]
+	},
+	{
+		"name": "新婦の小さいころ①",
+		"path": "https://placehold.jp/100x50.png",
+		"description": "生まれたて",
+		"imageDate": "19XX年AA月",
+		"owner": "bride",
+		"tags": ["幼少期-新婦"]
+	},
+	{
+		"name": "新婚旅行",
+		"path": "https://placehold.jp/100x50.png",
+		"description": "月へ宇宙旅行へ行ったときの写真",
+		"imageDate": "2020年12月",
+		"owner": "all",
+		"tags": ["旅行", "最近の写真"]
+	}
+]
